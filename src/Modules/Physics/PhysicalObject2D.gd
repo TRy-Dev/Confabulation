@@ -28,7 +28,7 @@ func update() -> void:
 		var friction = -1 * last_velocity * friction_coeff
 		apply_force(friction)
 	# Apply acceleration
-	last_velocity += acceleration
+	last_velocity += acceleration * get_physics_process_delta_time()
 	last_velocity = last_velocity.clamped(max_speed)
 	velocity = move_and_slide(last_velocity, FLOOR_NORMAL)
 	# Bounce if collided
