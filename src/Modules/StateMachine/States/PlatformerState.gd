@@ -2,6 +2,13 @@ extends State
 
 class_name PlatformerState
 
+# Simple base state for all platformer states
+# TODO:
+# 1. Add horizontal acceleration and drag: https://kidscancode.org/godot_recipes/2d/platform_character/
+# 2. UX - Coyote timer, jump input forgiveness
+# 3. Slope handing, ...
+# 4. ...
+
 const TILE_SIZE = 64
 const TILE_PADDED = TILE_SIZE + 0
 

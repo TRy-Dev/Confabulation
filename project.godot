@@ -9,19 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "PhysicalObject2D",
+"class": "Boid",
+"language": "GDScript",
+"path": "res://src/Modules/Physics/Boid.gd"
+}, {
 "base": "Reference",
 "class": "CastleDB",
 "language": "GDScript",
 "path": "res://addons/thejustinwalsh.castledb/castledb_types.gd"
 }, {
+"base": "PlatformerState",
+"class": "OnGround",
+"language": "GDScript",
+"path": "res://src/Modules/Characters/Platformer/States/OnGround.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "PhysicalObject2D",
 "language": "GDScript",
 "path": "res://src/Modules/Physics/PhysicalObject2D.gd"
+}, {
+"base": "State",
+"class": "PlatformerState",
+"language": "GDScript",
+"path": "res://src/Modules/StateMachine/States/PlatformerState.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/Modules/StateMachine/States/State.gd"
 } ]
 _global_script_class_icons={
+"Boid": "",
 "CastleDB": "",
-"PhysicalObject2D": ""
+"OnGround": "",
+"PhysicalObject2D": "",
+"PlatformerState": "",
+"State": ""
 }
 
 [application]
