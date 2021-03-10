@@ -61,6 +61,7 @@ default_bus_layout="res://src/Modules/Audio/bus.tres"
 
 TestDb="*res://assets/test_db.cdb"
 FileSystem="*res://src/Modules/Core/FileSystem.gd"
+Math="*res://src/Modules/Core/Math.gd"
 Rng="*res://src/Modules/Core/RNG.gd"
 AnimationController="*res://src/Modules/Core/AnimationController.gd"
 AudioController="*res://src/Modules/Audio/AudioController.tscn"
