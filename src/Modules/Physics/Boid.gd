@@ -6,9 +6,6 @@ class_name Boid
 
 export(float, 0.0, 500.0) var slow_radius := 100.0
 export(float, 0.0, 100.0) var separate_radius := 40.0
-export(float, 0.0, 10.0) var sep_mult := 1.0
-export(float, 0.0, 10.0) var ali_mult := 1.0
-export(float, 0.0, 10.0) var coh_mult := 1.0
 
 var neighbors = []
 
@@ -75,12 +72,3 @@ func cohesion() -> Vector2:
 		sum += n.position
 	sum /= len(neighbors)
 	return arrive(sum)
-
-func flock() -> void:
-	var sep = separate()
-	var ali = align()
-	var coh = cohesion()
-	apply_force(sep * sep_mult)
-	apply_force(ali * ali_mult)
-	apply_force(coh * coh_mult)
-

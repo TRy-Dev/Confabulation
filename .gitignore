@@ -2,3 +2,7 @@ assets/
 debug/
 builds/
 .import/
+
+.inkgd_compiler.cfg
+auto_itch.sh
+dropbox_sync.txt

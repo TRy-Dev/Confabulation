@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Modules/Grid/World/Environment.gd" type="Script" id=2]
+[ext_resource path="res://src/Modules/Grid/World/TileGenerator.tscn" type="PackedScene" id=5]
+
+[node name="Environment" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.121569 )
+cell_size = Vector2( 16, 16 )
+cell_tile_origin = 1
+collision_layer = 0
+collision_mask = 0
+format = 1
+
+[node name="Decoratives" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.392157 )
+probability = 0.35
+z_offset = 1e+06
+w_offset = 1e+06
+
+[node name="BorderColliders" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.784314 )
+collision_layer = 2
+collision_mask = 0
+probability = 1.0
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.0784314 )
+z_offset = -1e+06
+w_offset = -1e+06
+
+[node name="Grid" type="TileMap" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.0392157 )
+position = Vector2( -0.5, -0.5 )
+cell_size = Vector2( 16, 16 )
+cell_tile_origin = 1
+collision_layer = 0
+collision_mask = 0
+format = 1

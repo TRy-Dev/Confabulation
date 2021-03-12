@@ -1,39 +1,62 @@
-extends Node
+extends Node2D
 
-onready var _audio_sources_container = $Sources
+onready var _sources_0d = $Sources0D
+onready var _sources_2d = $Sources2D
 
-var _clips = {}
+var _clips := {}
 
-var _audio_sources = []
+const MAX_AUDIO_SOURCES := 8
+const MIN_PITCH := 0.95
+const MAX_PITCH := 1.05
+const SFX_PATH := "res://assets/audio/sfx"
 
-const MAX_AUDIO_SOURCES = 10
+const SOURCE_2D_MAX_DISTANCE := 200.0
+const SOURCE_2D_ATTENUATION := 2.0
 
-const MIN_PITCH = 0.8
-const MAX_PITCH = 1.2
+const BASE_VOLUME_DB = -20
+const SFX_BUS = "Sfx"
 
-const SFX_PATH = "res://assets/audio/sfx"
+func _init():
+	self.load()
 
-func play(name) -> void:
-	if name in _clips:
-		for s in _audio_sources:
-			if not s.playing:
-				_play_audio(s, name)
-				return
-		if len(_audio_sources) < MAX_AUDIO_SOURCES:
-			var new_source = AudioStreamPlayer.new()
-			new_source.bus = "Sfx"
-			_audio_sources_container.add_child(new_source)
-			_audio_sources.append(new_source)
-			_play_audio(new_source, name)
-		else:
-			push_error("HEY! Trying to play too many (More than %s) " \
-				 + "audio _clips at the same time" % MAX_AUDIO_SOURCES)
-	else:
+func play(name: String, volume_db := BASE_VOLUME_DB) -> void:
+	if not name in _clips:
 		push_error("HEY! No such audio clip: %s" %name)
+		return
+	var source = _get_idle_source(_sources_0d, AudioStreamPlayer)
+	_play_audio(source, name, volume_db)
 
-func _play_audio(source, name):
-	source.stream = _clips[name][Rng.randi(0, len(_clips[name]) - 1)]
+func play_at(name: String, position: Vector2, volume_db := BASE_VOLUME_DB) -> void:
+	if not name in _clips:
+		push_error("HEY! No such audio clip: %s" %name)
+		return
+	var source = _get_idle_source(_sources_2d, AudioStreamPlayer2D)
+	if source:
+		source.global_position = position
+		_play_audio(source, name, volume_db)
+
+func _get_idle_source(sources_parent, template):
+	var sources = sources_parent.get_children()
+	for source in sources:
+		if not source.playing:
+			return source
+	if len(sources) < MAX_AUDIO_SOURCES:
+		var new_source = template.new()
+		new_source.bus = SFX_BUS
+		sources_parent.add_child(new_source)
+		if template == AudioStreamPlayer2D:
+			new_source.max_distance = SOURCE_2D_MAX_DISTANCE
+			new_source.attenuation = SOURCE_2D_ATTENUATION
+		return new_source
+	else:
+		push_error("HEY! Trying to play more than %s audio clips at the same time" % MAX_AUDIO_SOURCES)
+
+func _play_audio(source, name: String, volume_db: float):
+	if not source:
+		return
+	source.stream = Rng.rand_from_array(_clips[name])
 	source.pitch_scale = Rng.randf(MIN_PITCH, MAX_PITCH)
+	source.volume_db = clamp(volume_db, -80, 0)
 	source.play()
 
 func load():
@@ -43,3 +66,5 @@ func load():
 			if f.ends_with(".wav"):
 				var clip = load(FileSystem.concat_path([SFX_PATH, dir, f]))
 				_clips[dir].append(clip)
+		if not _clips[dir]:
+			_clips.erase(dir)

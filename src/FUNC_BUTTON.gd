@@ -4,7 +4,7 @@ func _on_pressed() -> void:
 	if has_method(name):
 		call(name)
 	else:
-		push_error("HEY! UI button trying to call function: %s" % name)
+		push_error("HEY! UI button trying to call non-existing function: %s" % name)
 
 func play_music() -> void:
 	AudioController.music.play()

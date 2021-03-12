@@ -19,10 +19,45 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/thejustinwalsh.castledb/castledb_types.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "DynamicCollider",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/Tiles/DynamicCollider.gd"
+}, {
+"base": "Boid",
+"class": "Flocker",
+"language": "GDScript",
+"path": "res://src/Modules/Physics/Flocker.gd"
+}, {
+"base": "Node2D",
+"class": "FlowField",
+"language": "GDScript",
+"path": "res://src/Modules/Physics/FlowField.gd"
+}, {
+"base": "Resource",
+"class": "GameSave",
+"language": "GDScript",
+"path": "res://src/Modules/DataPersistence/GameSave.gd"
+}, {
+"base": "Node",
+"class": "GridNavigation",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/World/GridNavigation.gd"
+}, {
+"base": "Node2D",
+"class": "GridWorld",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/World/GridWorld.gd"
+}, {
 "base": "PlatformerState",
 "class": "OnGround",
 "language": "GDScript",
 "path": "res://src/Modules/Characters/Platformer/States/OnGround.gd"
+}, {
+"base": "Tile",
+"class": "Pawn",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/Tiles/Pawn.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "PhysicalObject2D",
@@ -38,19 +73,56 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://src/Modules/StateMachine/States/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/Modules/StateMachine/StateMachine.gd"
+}, {
+"base": "Node2D",
+"class": "Tile",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/Tiles/Tile.gd"
+}, {
+"base": "TileMap",
+"class": "TileController",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/World/TileController.gd"
+}, {
+"base": "State",
+"class": "TileState",
+"language": "GDScript",
+"path": "res://src/Modules/Grid/Tiles/TileState.gd"
+}, {
+"base": "PhysicalObject2D",
+"class": "TopDownCharacter",
+"language": "GDScript",
+"path": "res://src/Modules/Characters/TopDown/TopDownCharacter.gd"
 } ]
 _global_script_class_icons={
 "Boid": "",
 "CastleDB": "",
+"DynamicCollider": "",
+"Flocker": "",
+"FlowField": "",
+"GameSave": "",
+"GridNavigation": "",
+"GridWorld": "",
 "OnGround": "",
+"Pawn": "",
 "PhysicalObject2D": "",
 "PlatformerState": "",
-"State": ""
+"State": "",
+"StateMachine": "",
+"Tile": "",
+"TileController": "",
+"TileState": "",
+"TopDownCharacter": ""
 }
 
 [application]
 
-config/name="Modules"
+config/name="GWJ31"
 run/main_scene="res://src/Main.tscn"
 
 [audio]
@@ -59,25 +131,38 @@ default_bus_layout="res://src/Modules/Audio/bus.tres"
 
 [autoload]
 
-TestDb="*res://assets/test_db.cdb"
 FileSystem="*res://src/Modules/Core/FileSystem.gd"
-Math="*res://src/Modules/Core/Math.gd"
+GameSettings="*res://src/Modules/Core/GameSettings.gd"
 Rng="*res://src/Modules/Core/RNG.gd"
+Math="*res://src/Modules/Core/Math.gd"
+Easing="*res://src/Modules/Core/Easing.gd"
+Speedrun="*res://src/Modules/Other/Speedrun.gd"
+PhysicsPrediction="*res://src/Modules/Physics/PhysicsPrediction.gd"
+GameSaver="*res://src/Modules/DataPersistence/GameSaver.gd"
+DebugOverlay="*res://src/Modules/Core/DebugOverlay.tscn"
+SceneController="*res://src/Modules/Core/SceneController.gd"
 AnimationController="*res://src/Modules/Core/AnimationController.gd"
 AudioController="*res://src/Modules/Audio/AudioController.tscn"
+ParticleController="*res://src/Modules/Rendering/Particles/ParticleController.gd"
+DialogueController="*res://src/Modules/Dialogue/DialogueController.gd"
 Courtain="*res://src/Modules/Rendering/Courtain.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+LeaderboardAPI="*res://src/Modules/DataPersistence/LeaderboardAPI.gd"
+
+[display]
+
+window/size/width=1366
+window/size/height=768
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "thejustinwalsh.castledb" )
+enabled=PoolStringArray( "inkgd", "silent_wolf", "thejustinwalsh.castledb" )
 
 [input]
 
-space={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
- ]
-}
 left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
@@ -107,3 +192,7 @@ down={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="environment"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
