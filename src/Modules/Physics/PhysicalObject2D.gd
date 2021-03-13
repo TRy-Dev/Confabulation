@@ -15,7 +15,7 @@ export(bool) var should_rotate := false
 var velocity := Vector2()
 var acceleration := Vector2()
 
-const FLOOR_NORMAL = Vector2.UP
+#const FLOOR_NORMAL = Vector2.UP
 const MIN_VELOCITY_SQ = pow(4.0, 2.0)
 
 # For bouncing
@@ -40,7 +40,7 @@ func update() -> void:
 	# Apply acceleration
 	previous_velocity += acceleration * get_physics_process_delta_time()
 	previous_velocity = previous_velocity.clamped(max_speed)
-	velocity = move_and_slide(previous_velocity, FLOOR_NORMAL)
+	velocity = move_and_slide(previous_velocity)
 	# Bounce if collided
 	var slide_count = get_slide_count()
 	if slide_count and bounciness > 0.0:

@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Characters/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Characters/Interactions/InteractionController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Modules/StateMachine/StateMachine.gd" type="Script" id=4]
+[ext_resource path="res://src/Characters/States/Move.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Characters/States/Interact.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Modules/StateMachine/StateNameDisplay.tscn" type="PackedScene" id=7]
 
 [node name="Player" instance=ExtResource( 1 )]
+collision_mask = 3
 script = ExtResource( 2 )
+
+[node name="InteractionController" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="StateMachine" type="Node" parent="." index="3"]
+script = ExtResource( 4 )
+
+[node name="Move" parent="StateMachine" index="0" instance=ExtResource( 5 )]
+
+[node name="Interact" parent="StateMachine" index="1" instance=ExtResource( 6 )]
+
+[node name="StateNameDisplay" parent="." index="4" instance=ExtResource( 7 )]
+margin_top = -30.1928
+margin_bottom = -16.1928
