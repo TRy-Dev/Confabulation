@@ -43,10 +43,12 @@ func _load_story():
 
 func _get_current_dialogue() -> Dictionary:
 	var text_lines = []
+	var text = ""
 	while story.can_continue:
 		var line = story.continue()
 #		var tags = story.current_tags
 		text_lines.append(line)
+		text += line
 	var choices = story.current_choices
 	for c in choices:
 		if c.text == DEBUG_OPTION_TEXT:
@@ -54,6 +56,7 @@ func _get_current_dialogue() -> Dictionary:
 			choices.erase(c)
 			break
 	return {
+		"text": text,
 		"lines": text_lines,
 		"options": choices
 	}

@@ -5,11 +5,11 @@ signal interaction_exited(interaction)
 
 var interaction :Interaction = null
 
-func start_interaction() -> bool:
+func start_interaction(player: PlayerAvatar) -> bool:
 	if not interaction:
 		print("No interaction to start")
 		return false
-	interaction.start()
+	interaction.start(player)
 	return true
 
 func _on_area_entered(area):

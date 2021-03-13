@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UserInterface/DialogueUI.gd" type="Script" id=1]
+
+[node name="DialogueUI" type="PanelContainer"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 800.0
+margin_bottom = 250.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 793.0
+margin_bottom = 243.0
+
+[node name="Npc" type="VBoxContainer" parent="HBoxContainer"]
+margin_bottom = 236.0
+
+[node name="Image" type="TextureRect" parent="HBoxContainer/Npc"]
+
+[node name="Name" type="Label" parent="HBoxContainer/Npc"]
+margin_top = 4.0
+margin_bottom = 18.0
+
+[node name="Dialogue" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 236.0
+
+[node name="Text" type="Label" parent="HBoxContainer/Dialogue"]
+margin_bottom = 14.0
