@@ -36,14 +36,14 @@ func update() -> void:
 		if velocity.length_squared() < MIN_VELOCITY_SQ:
 			# break faster when speed is low
 			friction *= 10.0
-		apply_force(_vel_to_force(-1 * previous_velocity * friction))
+		apply_force(_vel_to_force(-1 * previous_velocity * friction).clamped(velocity.length()))
 	# Apply acceleration
 	previous_velocity += acceleration * get_physics_process_delta_time()
 	previous_velocity = previous_velocity.clamped(max_speed)
 	velocity = move_and_slide(previous_velocity, FLOOR_NORMAL)
 	# Bounce if collided
 	var slide_count = get_slide_count()
-	if slide_count and bounciness:
+	if slide_count and bounciness > 0.0:
 		_handle_collision(get_slide_collision(slide_count - 1))
 	# Rotate if rotation enabled
 	if should_rotate:
