@@ -18,3 +18,6 @@ func get_dialogue_interaction() -> DialogueInteraction:
 
 func get_image():
 	return sprite.texture
+
+func get_name() -> String:
+	return "NPC name placeholder"

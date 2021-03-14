@@ -6,8 +6,9 @@ onready var npc_container = $NPCs
 onready var ui = $UserInterface
 
 func _ready() -> void:
-	pass
-#	AudioController.music.play("devious_preparations")
+	AudioController.lerp_music_volume(-60, 0.0)
+#	AudioController.music.play("carpe_diem")
+	AudioController.lerp_music_volume(-20, 16.0)
 #	AudioController.set_bus_volume("Music", -20)
 #	Courtain.play("show", true)
 	camera_controller.set_target_instant(player)
@@ -17,5 +18,12 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug_reset"):
-		SceneController.reload_current()
+		restart_scene()
+	if Input.is_action_just_pressed("interact"):
+		AudioController.sfx.play("leaves")
+	
 	player.update_fsm()
+	
+func restart_scene():
+	PlayerData.reset()
+	SceneController.reload_current()

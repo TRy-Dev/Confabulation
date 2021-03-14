@@ -15,6 +15,8 @@ var current_interaction = null
 func start_dialogue(npc: NonPlayerCharacter) -> void:
 	current_interaction = npc.get_dialogue_interaction()
 	print("Starting debug dialogue instead of %s" %npc.get_dialogue_name())
+	npc_image.texture = npc.get_image()
+	npc_name.text = npc.get_name()
 	var dialogue = DialogueController.start_dialogue("debug_dialogue")
 	_set_dialogue(dialogue)
 
@@ -34,6 +36,8 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 func _finish_dialogue():
 	current_interaction.finish()
 	_clear_option_buttons()
+	npc_image.texture = null
+	npc_name.text = ""
 	dialogue_text.text = ""
 	current_interaction = null
 

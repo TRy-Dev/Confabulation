@@ -3,7 +3,13 @@ extends Area2D
 signal interaction_entered(interaction)
 signal interaction_exited(interaction)
 
+onready var interaction_ui = $InteractionUI
+
 var interaction :Interaction = null
+
+func _ready():
+	connect("interaction_entered", interaction_ui, "_on_interaction_entered")
+	connect("interaction_exited", interaction_ui, "_on_interaction_exited")
 
 func start_interaction(player: PlayerAvatar) -> bool:
 	if not interaction:

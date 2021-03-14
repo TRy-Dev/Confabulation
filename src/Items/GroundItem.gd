@@ -11,7 +11,7 @@ func _ready():
 
 func play_animation(name) -> void:
 	AnimationController.play(anim_player, name)
-	yield(anim_player, "animation_finished")
+#	yield(anim_player, "animation_finished")
 
 func destroy():
 	queue_free()
