@@ -10,11 +10,6 @@ length = 0.001
 
 [node name="NonPlayerCharacter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-friction_coeff = 0.02
-bounciness = 0.9
-max_speed = 100000.0
-max_force = 100000.0
-move_speed = 100.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 1, 0, 1, 1 )

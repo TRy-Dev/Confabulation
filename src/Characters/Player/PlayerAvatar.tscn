@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.gd" type="Script" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://src/Modules/StateMachine/StateNameDisplay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=8]
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.7539
+height = 4.57248
+
 [sub_resource type="Animation" id=1]
 resource_name = "_reset"
 length = 0.001
@@ -17,7 +21,16 @@ length = 0.001
 collision_mask = 3
 script = ExtResource( 2 )
 
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -8.02715 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -5.77014 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
 [node name="InteractionController" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.8785 )
 
 [node name="StateMachine" type="Node" parent="." index="3"]
 script = ExtResource( 4 )

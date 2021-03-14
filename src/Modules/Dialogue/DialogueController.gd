@@ -15,13 +15,13 @@ func start_dialogue(name: String) -> Dictionary:
 	story.choose_path_string(name)
 	return _get_current_dialogue()
 
-func extract_text(name: String) -> String:
-	story.choose_path_string(name)
-	var dialogue = _get_current_dialogue()
-	var text = ""
-	for line in dialogue.lines:
-		text += line
-	return text
+#func extract_text(name: String) -> String:
+#	story.choose_path_string(name)
+#	var dialogue = _get_current_dialogue()
+#	var text = ""
+#	for line in dialogue.lines:
+#		text += line
+#	return text
 
 func select_option(index: int) -> Dictionary:
 	story.choose_choice_index(index)
@@ -47,22 +47,64 @@ func _get_current_dialogue() -> Dictionary:
 	while story.can_continue:
 		var line = story.continue()
 #		var tags = story.current_tags
-		text_lines.append(line)
-		text += line
+		line = _get_parsed_text(line)
+		if line != "":
+			text_lines.append(line)
+			text += line
 	var choices = story.current_choices
 	for c in choices:
 		if c.text == DEBUG_OPTION_TEXT:
 #			print("Debug option text removed")
 			choices.erase(c)
 			break
+	var choices_texts = []
+	for c in choices:
+		var c_text = c.text
+		c_text = _get_parsed_text(c_text)
+		if c_text != "":
+			choices_texts.append(c_text)
 	return {
 		"text": text,
 		"lines": text_lines,
-		"options": choices
+		"choices": choices_texts
 	}
 
-func save_story() -> String:
-	return story.state.to_json()
+# Parse element for custom function calls 
+# and return if should be added to dialogue or if is locked
+# Return empty string if should not be added, parsed string if found fn_call and should be added
+# or unchanged text if no fn_call found
+func _get_parsed_text(text: String) -> String:
+	var FUNCTION_IDENTIFIER = "!FN"
+	if not text.find(FUNCTION_IDENTIFIER) == 0:
+		return text
+	text = text.lstrip(FUNCTION_IDENTIFIER)
+	var option_text = text.split(")")[1]
+	text = text.lstrip("(")
+	text = text.rstrip(option_text)
+	text = text.rstrip(")")
+	option_text.lstrip(" ").rstrip(" ")
+	option_text.lstrip("\n").rstrip("\n")
+	var text_elements = text.split(",")
+	var fn = text_elements[0].replace(" ", "")
+	var arg = text_elements[1].replace(" ", "")
+	match fn:
+		"has_item":
+			if PlayerData.has_item(arg):
+				return _get_parsed_text(option_text)
+			else:
+				return ""
+		"remove_item":
+			PlayerData.remove_item(arg)
+			return _get_parsed_text(option_text)
+		"unlock_a":
+			PlayerData.unlock_achievement(arg)
+			return _get_parsed_text(option_text)
+			
+	print("HEY! Text parser could not find matching for options:\nfn: %s\narg: %s" %[fn, arg])
+	return ""
 
-func load_story(json) -> void:
-	story.state.load_json(json)
+#func save_story() -> String:
+#	return story.state.to_json()
+#
+#func load_story(json) -> void:
+#	story.state.load_json(json)

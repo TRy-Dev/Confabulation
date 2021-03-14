@@ -14,18 +14,22 @@ var current_interaction = null
 
 func start_dialogue(npc: NonPlayerCharacter) -> void:
 	current_interaction = npc.get_dialogue_interaction()
-	print("Starting debug dialogue instead of %s" %npc.get_dialogue_name())
 	npc_image.texture = npc.get_image()
 	npc_name.text = npc.get_name()
-	var dialogue = DialogueController.start_dialogue("debug_dialogue")
+	var dialogue = DialogueController.start_dialogue(npc.get_dialogue_name())
+	if not dialogue.text:
+		print("Hey! Dialogue %s not found. Dialogue dict:" %npc.get_dialogue_name())
+		print(dialogue)
+		call_deferred("_finish_dialogue")
+		return
 	_set_dialogue(dialogue)
 
 func _set_dialogue(dialogue: Dictionary) -> void:
 	_clear_option_buttons()
 	dialogue_text.text = dialogue["text"]
-	for i in range(len(dialogue["options"])):
-		var opt = dialogue["options"][i]
-		_add_button(opt.text, i)
+	for i in range(len(dialogue["choices"])):
+		var choice_text = dialogue["choices"][i]
+		_add_button(choice_text, i)
 	_add_button(END_DIALOGUE_TEXT, -1)
 #	text_tween.stop_all()
 #	text_tween.interpolate_property(text, "percent_visible", 0.0, 1.0, len(text.text) / CHARS_PER_SECOND, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
@@ -44,7 +48,7 @@ func _finish_dialogue():
 func _add_button(text: String, idx: int) -> void:
 	var btn = Button.new()
 	btn.text = text
-	btn.connect("pressed", self, "_on_option_selected", [idx])
+	btn.connect("pressed", self, "_on_choice_selected", [idx])
 	dialogue_options_container.add_child(btn)
 	options_buttons.append(btn)
 
@@ -53,7 +57,7 @@ func _clear_option_buttons():
 		b.queue_free()
 	options_buttons = []
 
-func _on_option_selected(idx) -> void:
+func _on_choice_selected(idx) -> void:
 	options_buttons[current_btn_idx].release_focus()
 	if idx < 0:
 		_finish_dialogue()
