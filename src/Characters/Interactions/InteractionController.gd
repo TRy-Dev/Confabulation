@@ -22,10 +22,10 @@ func _on_area_entered(area):
 	if interaction:
 		print("HEY! Overriding interaction %s with %s" %[interaction.name, area.name])
 	interaction = area
-	print("Interaction entered: %s" %area.name)
+#	print("Interaction entered: %s" %area.name)
 	emit_signal("interaction_entered", interaction)
 
 func _on_area_exited(area):
-	print("Interaction exited: %s" %area.name)
+#	print("Interaction exited: %s" %area.name)
 	emit_signal("interaction_exited", interaction)
 	interaction = null

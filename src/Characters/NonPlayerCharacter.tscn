@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Characters/NonPlayerCharacter.gd" type="Script" id=2]
 [ext_resource path="res://src/Characters/Interactions/DialogueInteraction.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "_reset"
@@ -18,3 +19,24 @@ modulate = Color( 1, 0, 1, 1 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/_reset = SubResource( 1 )
+
+[node name="Control" type="Control" parent="." index="4"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="Control" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -19.768
+margin_right = 41.0
+margin_bottom = -5.76801
+custom_fonts/font = ExtResource( 4 )
+text = "npc name goes here"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

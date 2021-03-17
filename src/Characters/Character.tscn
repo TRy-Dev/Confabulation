@@ -13,7 +13,7 @@ friction_coeff = 0.2
 bounciness = 0.1
 max_speed = 1000.0
 max_force = 10000.0
-move_speed = 15.0
+move_speed = 7.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

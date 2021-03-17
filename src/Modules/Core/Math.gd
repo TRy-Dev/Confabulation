@@ -15,3 +15,6 @@ func is_vector_cardinal(vec: Vector2) -> bool:
 		if vec.is_equal_approx(card):
 			return true
 	return false
+
+func fract(num: float) -> float:
+	return num - int(num)

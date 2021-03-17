@@ -4,8 +4,11 @@ onready var npc_image = $HBoxContainer/Npc/Image
 onready var npc_name = $HBoxContainer/Npc/Name
 onready var dialogue_text = $HBoxContainer/Dialogue/Text
 onready var dialogue_options_container = $HBoxContainer/Dialogue
+onready var text_tween = $TextTween
 
 const END_DIALOGUE_TEXT = "Bye!"
+const CHARS_PER_SECOND = 45
+const MIN_TWEEN_TIME = 0.5
 
 var options_buttons = []
 var current_btn_idx = -1
@@ -26,14 +29,20 @@ func start_dialogue(npc: NonPlayerCharacter) -> void:
 
 func _set_dialogue(dialogue: Dictionary) -> void:
 	_clear_option_buttons()
-	dialogue_text.text = dialogue["text"]
+	var text = ""
+	for l in dialogue["lines"]:
+		text += l + "\n"
+	dialogue_text.text = text
+	text_tween.stop_all()
+	var tween_time = len(dialogue_text.text) / CHARS_PER_SECOND
+	tween_time = max(MIN_TWEEN_TIME, tween_time)
+	text_tween.interpolate_property(dialogue_text, "percent_visible", 0.0, 1.0, tween_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	text_tween.start()
+	yield(text_tween, "tween_all_completed")
 	for i in range(len(dialogue["choices"])):
 		var choice_text = dialogue["choices"][i]
 		_add_button(choice_text, i)
 	_add_button(END_DIALOGUE_TEXT, -1)
-#	text_tween.stop_all()
-#	text_tween.interpolate_property(text, "percent_visible", 0.0, 1.0, len(text.text) / CHARS_PER_SECOND, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-#	text_tween.start()
 	current_btn_idx = 0
 	options_buttons[current_btn_idx].grab_focus()
 

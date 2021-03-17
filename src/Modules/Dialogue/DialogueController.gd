@@ -74,6 +74,7 @@ func _get_current_dialogue() -> Dictionary:
 # Return empty string if should not be added, parsed string if found fn_call and should be added
 # or unchanged text if no fn_call found
 func _get_parsed_text(text: String) -> String:
+	text = text.strip_edges()
 	var FUNCTION_IDENTIFIER = "!FN"
 	if not text.find(FUNCTION_IDENTIFIER) == 0:
 		return text
@@ -82,8 +83,7 @@ func _get_parsed_text(text: String) -> String:
 	text = text.lstrip("(")
 	text = text.rstrip(option_text)
 	text = text.rstrip(")")
-	option_text.lstrip(" ").rstrip(" ")
-	option_text.lstrip("\n").rstrip("\n")
+	option_text = option_text.strip_edges()
 	var text_elements = text.split(",")
 	var fn = text_elements[0].replace(" ", "")
 	var arg = text_elements[1].replace(" ", "")
@@ -99,7 +99,9 @@ func _get_parsed_text(text: String) -> String:
 		"unlock_a":
 			PlayerData.unlock_achievement(arg)
 			return _get_parsed_text(option_text)
-			
+		"add_item":
+			PlayerData.add_item(arg)
+			return _get_parsed_text(option_text)
 	print("HEY! Text parser could not find matching for options:\nfn: %s\narg: %s" %[fn, arg])
 	return ""
 

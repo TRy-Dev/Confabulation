@@ -10,9 +10,10 @@ func _ready():
 
 func _on_achievements_updated(achievements) -> void:
 	for achi in achievements.values():
-		var new_achi_ui = achi_ui_prefab.instance()
-		container.add_child(new_achi_ui)
-		new_achi_ui.initialize(achi)
+		if achi["unlocked"]:
+			var new_achi_ui = achi_ui_prefab.instance()
+			container.add_child(new_achi_ui)
+			new_achi_ui.initialize(achi)
 
 func reset() -> void:
 	for c in container.get_children():

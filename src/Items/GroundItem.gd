@@ -8,6 +8,8 @@ onready var anim_player = $AnimationPlayer
 
 func _ready():
 	AnimationController.reset(anim_player)
+	$Sprite.texture = PlayerData.get_item_texture_by_name(name)
+	$Control/Label.text = name
 
 func play_animation(name) -> void:
 	AnimationController.play(anim_player, name)
@@ -17,7 +19,9 @@ func destroy():
 	queue_free()
 
 func _on_body_entered(body):
-	print("%s entered GroundItem %s" %[body.name, name])
+	pass
+#	print("%s entered GroundItem %s" %[body.name, name])
 
 func _on_body_exited(body):
-	print("%s exited GroundItem %s" %[body.name, name])
+	pass
+#	print("%s exited GroundItem %s" %[body.name, name])

@@ -6,7 +6,7 @@ onready var tween_rotate = $RotateTween
 const TRANS_TYPE = Tween.TRANS_SINE
 const EASE_TYPE = Tween.EASE_IN_OUT
 
-const ZOOM_DURATION = 1.0
+const ZOOM_DURATION = 2.0
 
 const ROTATION_MIN = -180
 const ROTATION_MAX = 180
@@ -25,8 +25,8 @@ var _target = null
 # string -> float
 var _zoom_levels = {
 #	"close": 0.2,
-#	"medium": 0.25,
-#	"far": 0.3,
+	"medium": 0.12,
+	"far": 0.2,
 }
 
 func _ready():

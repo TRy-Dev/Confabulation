@@ -9,10 +9,10 @@ func _ready() -> void:
 	AudioController.lerp_music_volume(-60, 0.0)
 	AudioController.music.play("carpe_diem")
 	AudioController.lerp_music_volume(-20, 16.0)
-#	AudioController.set_bus_volume("Music", -20)
-#	Courtain.play("show", true)
 	camera_controller.set_target_instant(player)
-#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	camera_controller.set_zoom_level("far", false)
+	camera_controller.set_zoom_level("medium")
+#	
 	for npc in npc_container.get_children():
 		npc.connect("dialogue_started", ui, "_on_dialogue_started")
 
