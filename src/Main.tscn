@@ -1,19 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Modules/Camera/CameraController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/art/debug/rect_16.png" type="Texture" id=5]
 [ext_resource path="res://src/Items/Oregano.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Characters/NPCs/Mother.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/World/BirdSounds.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/World/World.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Characters/NonPlayerCharacter.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/Modules/Rendering/Shaders/blur_gles2.shader" type="Shader" id=11]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 11 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -32,21 +27,27 @@ __meta__ = {
 }
 
 [node name="Mother" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( 250.129, -162.913 )
+position = Vector2( 392, -104 )
 move_speed = 15.0
 
-[node name="Homeless" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( 192.413, -139.292 )
+[node name="Homeless man" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 448, -104 )
 move_speed = 15.0
 
 [node name="Mrs Smith" parent="NPCs" instance=ExtResource( 10 )]
-position = Vector2( 195.365, -86.6164 )
+position = Vector2( 504, -104 )
 
 [node name="Pussy" parent="NPCs" instance=ExtResource( 10 )]
-position = Vector2( 239.96, -52.724 )
+position = Vector2( 392, -48 )
 
 [node name="Sandash" parent="NPCs" instance=ExtResource( 10 )]
-position = Vector2( 306.368, -18.3518 )
+position = Vector2( 448, -48 )
+
+[node name="Grant" parent="NPCs" instance=ExtResource( 10 )]
+position = Vector2( 504, -48 )
+
+[node name="Charlie" parent="NPCs" instance=ExtResource( 10 )]
+position = Vector2( 560, -104 )
 
 [node name="Items" type="Node2D" parent="."]
 __meta__ = {
@@ -54,16 +55,28 @@ __meta__ = {
 }
 
 [node name="Oregano" parent="Items" instance=ExtResource( 6 )]
-position = Vector2( 248.877, -105.113 )
+position = Vector2( 392, -160 )
 
 [node name="Fish" parent="Items" instance=ExtResource( 6 )]
-position = Vector2( 300.791, -116.502 )
+position = Vector2( 448, -160 )
 
 [node name="Worm" parent="Items" instance=ExtResource( 6 )]
-position = Vector2( 357.855, -72.1188 )
+position = Vector2( 504, -160 )
+
+[node name="Apple" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 560, -160 )
+
+[node name="Pussy" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 392, -216 )
+
+[node name="Fishbone" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 448, -216 )
+
+[node name="Bone" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 504, -216 )
 
 [node name="BirdSounds" parent="." instance=ExtResource( 8 )]
-position = Vector2( 253.366, -234.897 )
+position = Vector2( 632, -128 )
 
 [node name="YSort" type="YSort" parent="."]
 __meta__ = {
@@ -71,12 +84,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 309.983, -44.4116 )
+position = Vector2( 472, -128 )
 move_speed = 10.0
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
-
-[node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 1 )
-position = Vector2( 220.586, -122.372 )
-texture = ExtResource( 5 )
