@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Characters/Player/States/Interact.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Modules/StateMachine/StateNameDisplay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=8]
-[ext_resource path="res://assets/art/ola/test_main.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/ola/player/test_main.png" type="Texture" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 

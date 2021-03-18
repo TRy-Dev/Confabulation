@@ -1,4 +1,4 @@
-extends Area2D
+extends YSort
 
 class_name GroundItem
 

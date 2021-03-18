@@ -22,6 +22,7 @@ var achievements = {
 
 # name -> image
 var item_texture_map = {
+	"oregano": preload("res://assets/art/ola/items/oregano.png"),
 #	"Apple": preload("path to apple image")
 }
 
@@ -62,6 +63,7 @@ func unlock_achievement(name) -> void:
 	emit_signal("achievements_updated", achievements)
 
 func get_item_texture_by_name(name):
+	name = name.to_lower()
 	if item_texture_map.has(name):
 		return item_texture_map[name]
 	print("HEY! Item texture: `%s` not found" %name)

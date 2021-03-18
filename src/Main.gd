@@ -2,7 +2,7 @@ extends Node2D
 
 onready var camera_controller = $CameraController
 onready var player = $YSort/Player
-onready var npc_container = $NPCs
+onready var npc_container = $YSort/NPCs
 onready var ui = $UserInterface
 
 func _ready() -> void:

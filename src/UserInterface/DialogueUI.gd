@@ -15,6 +15,9 @@ var current_btn_idx = -1
 
 var current_interaction = null
 
+func _ready():
+	_finish_dialogue()
+
 func start_dialogue(npc: NonPlayerCharacter) -> void:
 	current_interaction = npc.get_dialogue_interaction()
 	npc_image.texture = npc.get_image()
@@ -47,7 +50,8 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	options_buttons[current_btn_idx].grab_focus()
 
 func _finish_dialogue():
-	current_interaction.finish()
+	if current_interaction:
+		current_interaction.finish()
 	_clear_option_buttons()
 	npc_image.texture = null
 	npc_name.text = ""

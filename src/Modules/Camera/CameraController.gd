@@ -27,6 +27,7 @@ var _zoom_levels = {
 #	"close": 0.2,
 	"medium": 0.12,
 	"far": 0.2,
+	"debug": 1.0,
 }
 
 func _ready():

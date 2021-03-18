@@ -6,11 +6,11 @@
 [ext_resource path="res://src/UserInterface/DialogueUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/AchievementsUI.tscn" type="PackedScene" id=5]
 
-
 [node name="UserInterface" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="Screen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
