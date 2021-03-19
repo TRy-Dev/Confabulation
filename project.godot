@@ -182,9 +182,7 @@ PlayerData="*res://src/Characters/Player/PlayerData.gd"
 
 [display]
 
-window/size/width=1366
-window/size/height=768
-window/size/resizable=false
+window/size/width=800
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

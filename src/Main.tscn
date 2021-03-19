@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Modules/Camera/CameraController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/art/debug/rect_16.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/ola/npcs/neighbour.png" type="Texture" id=5]
 [ext_resource path="res://src/Items/Oregano.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Characters/NPCs/Mother.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/World/BirdSounds.tscn" type="PackedScene" id=8]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/art/ola/world/sign_bus.png" type="Texture" id=21]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=22]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=23]
+[ext_resource path="res://assets/art/ola/npcs/homeless.png" type="Texture" id=24]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
@@ -382,31 +383,31 @@ __meta__ = {
 
 [node name="Oregano" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( 142, 68 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Fish" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( 23, 161 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 290, -225 )
-image = ExtResource( 5 )
+position = Vector2( 159, -175 )
+sort_enabled = true
 
 [node name="Apple" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 276, -150 )
-image = ExtResource( 5 )
+position = Vector2( 247, -225 )
+sort_enabled = true
 
 [node name="Pussy" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( -95, -30 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Fishbone" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( -75, -10 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Bone" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( 45, -181 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="NPCs" type="YSort" parent="YSort"]
 __meta__ = {
@@ -414,15 +415,21 @@ __meta__ = {
 }
 
 [node name="Mother" parent="YSort/NPCs" instance=ExtResource( 7 )]
-position = Vector2( 278, -172 )
+position = Vector2( 253, -128 )
 move_speed = 15.0
 
 [node name="Homeless man" parent="YSort/NPCs" instance=ExtResource( 7 )]
 position = Vector2( 22, -47 )
 move_speed = 15.0
 
+[node name="Sprite" parent="YSort/NPCs/Homeless man" index="0"]
+texture = ExtResource( 24 )
+
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 226, -33 )
+
+[node name="Sprite" parent="YSort/NPCs/Mrs Smith" index="0"]
+texture = ExtResource( 5 )
 
 [node name="Pussy" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -84, -50 )
@@ -480,31 +487,31 @@ __meta__ = {
 
 [node name="Oregano" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -272, -192 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Fish" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -216, -192 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Worm" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -160, -192 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Apple" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -104, -192 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Pussy" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -272, -248 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Fishbone" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -216, -248 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="Bone" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -160, -248 )
-image = ExtResource( 5 )
+sort_enabled = true
 
 [node name="NPCs" type="YSort" parent="_DEBUG"]
 __meta__ = {
@@ -533,3 +540,7 @@ position = Vector2( -160, -80 )
 
 [node name="Benjamin" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -104, -136 )
+
+[editable path="YSort/NPCs/Homeless man"]
+
+[editable path="YSort/NPCs/Mrs Smith"]

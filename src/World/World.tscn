@@ -352,6 +352,9 @@ position = Vector2( 126, -82 )
 [node name="TrunkV4" parent="Props" instance=ExtResource( 35 )]
 position = Vector2( 115, -81 )
 
+[node name="TrunkV5" parent="Props" instance=ExtResource( 35 )]
+position = Vector2( 164, -187 )
+
 [node name="TrunkV2" parent="Props" instance=ExtResource( 35 )]
 position = Vector2( 9, 74 )
 

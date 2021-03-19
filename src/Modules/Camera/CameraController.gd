@@ -25,8 +25,8 @@ var _target = null
 # string -> float
 var _zoom_levels = {
 #	"close": 0.2,
-	"medium": 0.12,
-	"far": 0.2,
+	"medium": 0.18,
+	"far": 0.22,
 	"debug": 1.0,
 }
 

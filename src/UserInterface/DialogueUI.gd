@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal dialogue_finished()
+
 onready var npc_image = $HBoxContainer/Npc/Image
 onready var npc_name = $HBoxContainer/Npc/Name
 onready var dialogue_text = $HBoxContainer/Dialogue/Text
@@ -73,10 +75,11 @@ func _destroy_current_npc():
 
 func _finish_dialogue():
 	_clear_option_buttons()
-	if not current_interaction:
-		print("HEY! Theres no current_interaction when trying to finish dialogue!")
-	else:
+	if current_interaction:
+		emit_signal("dialogue_finished")
 		current_interaction.finish()
+	else:
+		print("HEY! Theres no current_interaction when trying to finish dialogue!")
 	if destroy_npc_after_dialogue:
 		_destroy_current_npc()
 	npc_image.texture = null

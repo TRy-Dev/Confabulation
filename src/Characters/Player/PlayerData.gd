@@ -18,6 +18,10 @@ var achievements = {
 	"good_heart": {
 		"text": "Share food with someone in need",
 		"image": DEBUG_IMAGE,
+	},
+	"two_apples": {
+		"text": "2 apples a day...",
+		"image": DEBUG_IMAGE
 	}
 }
 
@@ -39,6 +43,8 @@ func reset():
 
 func add_item(name) -> void:
 	if has_item(name):
+		if name == "Apple":
+			unlock_achievement("two_apples")
 		print("HEY! Player already has item: %s" %name)
 		return
 	inventory[name] = get_item_texture_by_name(name)

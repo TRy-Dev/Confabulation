@@ -10,8 +10,6 @@ onready var anim_mode = anim_tree.get("parameters/playback")
 
 const ITEM_PICK_UP_DURATION = 0.2
 
-const MOVE_MIN_VELOCITY_SQ = pow(1.0, 2.0)
-
 func _ready():
 	_set_anim_dir(Vector2.DOWN)
 	fsm.connect("state_changed", $StateNameDisplay, "_on_state_changed")
@@ -47,8 +45,8 @@ func update_animation():
 			_set_anim_dir(move_dir)
 		anim_mode.travel("Idle")
 
-func set_anim(name):
-	anim_mode.travel(name)
+#func set_anim(name):
+#	anim_mode.travel(name)
 
 func _get_input_direction() -> Vector2:
 	return Vector2(
