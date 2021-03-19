@@ -5,14 +5,12 @@ class_name PlayerAvatar
 onready var interaction_controller = $InteractionController
 onready var fsm = $StateMachine
 onready var sprite = $Sprite
+onready var anim_tree = $AnimationTree
+onready var anim_mode = anim_tree.get("parameters/playback")
 
-const MOVE_MIN_VELOCITY_SQ = pow(10.0, 2.0)
+const ITEM_PICK_UP_DURATION = 0.2
 
-export(Texture) var idle_tileset
-export(Texture) var walk_tileset
-
-var current_frame = 0
-const FRAME_COUNT = 4
+const MOVE_MIN_VELOCITY_SQ = pow(2.0, 2.0)
 
 func _ready():
 	fsm.connect("state_changed", $StateNameDisplay, "_on_state_changed")
@@ -30,7 +28,7 @@ func get_current_interaction():
 func pickup_item(item: GroundItem) -> void:
 #	print("Player is picking up item %s" %item.name)
 	PlayerData.add_item(item.name)
-	yield(get_tree().create_timer(0.2), "timeout")
+	yield(get_tree().create_timer(ITEM_PICK_UP_DURATION), "timeout")
 	pass
 
 func update():
@@ -38,35 +36,10 @@ func update():
 	if velocity.length_squared() > MOVE_MIN_VELOCITY_SQ:
 		# move
 		var move_dir = velocity.normalized()
-		pass
+		anim_tree.set('parameters/Idle/blend_position', move_dir)
+		anim_tree.set('parameters/Walk/blend_position', move_dir)
+		anim_mode.travel("Walk")
 	else:
 		#idle
-		pass
+		anim_mode.travel("Idle")
 
-func _on_AnimFrameTimer_timeout():
-	pass # Replace with function body.
-
-func pixel_perfect():
-	pass
-		# Pixel perfect position for player - is too jarring
-#	var fract_pos = Vector2(Math.fract(global_position.x), Math.fract(global_position.y))
-#	if fract_pos.x < 0:
-#		if fract_pos.x > -0.5:
-#			sprite.position.x = -1 * (1.0 - fract_pos.x)
-#		else:
-#			sprite.position.x = fract_pos.x
-#	else:
-#		if fract_pos.x > 0.5:
-#			sprite.position.x = 1.0 - fract_pos.x
-#		else:
-#			sprite.position.x = -1 * fract_pos.x
-#	if fract_pos.y < 0:
-#		if fract_pos.y > -0.5:
-#			sprite.position.y = -1 * (1.0 - fract_pos.y)
-#		else:
-#			sprite.position.y = fract_pos.y
-#	else:
-#		if fract_pos.y > 0.5:
-#			sprite.position.y = 1.0 - fract_pos.y
-#		else:
-#			sprite.position.y = -1 * fract_pos.y
