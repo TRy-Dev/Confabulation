@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://assets/art/ola/world/sign_bus.png" type="Texture" id=21]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=22]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=23]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -368,7 +371,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -88, -115 )
+position = Vector2( 308, -118 )
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -436,6 +439,37 @@ position = Vector2( 169, 30 )
 [node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -132, -114 )
 
+[node name="SignBus" type="YSort" parent="YSort"]
+position = Vector2( -12, -183 )
+sort_enabled = false
+
+[node name="sign_bus" type="Sprite" parent="YSort/SignBus"]
+position = Vector2( 0.5, -22.5 )
+texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/SignBus"]
+position = Vector2( 1, -1 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SignBus/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="SignPath" type="YSort" parent="YSort"]
+position = Vector2( 34, -69 )
+sort_enabled = false
+
+[node name="sign_path" type="Sprite" parent="YSort/SignPath"]
+position = Vector2( 0.5, -13 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort/SignPath"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SignPath/StaticBody2D2"]
+shape = SubResource( 1 )
+
 [node name="_DEBUG" type="Node2D" parent="."]
 position = Vector2( 571, -577 )
 
@@ -499,11 +533,3 @@ position = Vector2( -160, -80 )
 
 [node name="Benjamin" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -104, -136 )
-
-[node name="sign_bus" type="Sprite" parent="."]
-position = Vector2( -12, -205 )
-texture = ExtResource( 21 )
-
-[node name="sign_path" type="Sprite" parent="."]
-position = Vector2( 35, -82 )
-texture = ExtResource( 20 )
