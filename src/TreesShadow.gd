@@ -3,7 +3,7 @@ extends TileMap
 onready var trunks = $Trunks
 
 const TRUNK_TILES_COUNT = 3
-const TRUNK_CHANCE = 0.6
+const TRUNK_CHANCE = 0.0
 const NOISE_SCALE = 10000
 
 func _ready():
@@ -18,7 +18,7 @@ func _create_trunks():
 		for y in [2, 1]:
 			for x in [-1, 0, 1]:
 				if not get_cellv(pos + Vector2(x, y)):
-					_add_trunk(pos)
+					_add_trunk(pos + Vector2.UP)
 					created_trunk = true
 				if created_trunk:
 					break

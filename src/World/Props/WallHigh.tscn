@@ -8,9 +8,6 @@
 [node name="StaticBody2D" parent="." index="1"]
 position = Vector2( -24, -10 )
 
-[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-z_index = 1
-
 [node name="CollisionShape2D2" parent="StaticBody2D" index="1"]
 z_index = 1
 

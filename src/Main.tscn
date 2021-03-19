@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
@@ -10,6 +10,19 @@
 [ext_resource path="res://src/World/BirdSounds.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/World/World.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Characters/NonPlayerCharacter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/art/ola/world/snow/snow3.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/ola/world/snow/snow2.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/ola/world/snow/snow1.png" type="Texture" id=13]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt4.png" type="Texture" id=14]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt5.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt1.png" type="Texture" id=16]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt3.png" type="Texture" id=17]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=18]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=19]
+[ext_resource path="res://assets/art/ola/world/sign_path.png" type="Texture" id=20]
+[ext_resource path="res://assets/art/ola/world/sign_bus.png" type="Texture" id=21]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=22]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=23]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -25,13 +38,337 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="BirdSounds" parent="." instance=ExtResource( 8 )]
 position = Vector2( 632, -128 )
 
+[node name="Snow+Dirt" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Dirt" type="Node2D" parent="Snow+Dirt"]
+
+[node name="dirt1" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 121, -31 )
+texture = ExtResource( 16 )
+
+[node name="dirt2" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 109, -56 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt61" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 70, -121 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt55" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 14, -85 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt32" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 34, -69 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt13" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 50, 39 )
+texture = ExtResource( 18 )
+
+[node name="dirt14" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 59, 38 )
+texture = ExtResource( 18 )
+
+[node name="dirt6" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 72, -65 )
+texture = ExtResource( 18 )
+
+[node name="dirt20" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 261, -179 )
+texture = ExtResource( 18 )
+
+[node name="dirt17" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 102, 107 )
+texture = ExtResource( 18 )
+
+[node name="dirt18" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 58, 123 )
+texture = ExtResource( 18 )
+
+[node name="dirt3" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 50, -53 )
+texture = ExtResource( 17 )
+
+[node name="dirt66" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 140, -3 )
+texture = ExtResource( 17 )
+
+[node name="dirt62" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 56, -128 )
+texture = ExtResource( 17 )
+
+[node name="dirt54" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -2, -82 )
+texture = ExtResource( 17 )
+
+[node name="dirt4" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 80, -40 )
+texture = ExtResource( 14 )
+
+[node name="dirt53" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -20, -80 )
+texture = ExtResource( 14 )
+
+[node name="dirt52" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -24, -88 )
+texture = ExtResource( 14 )
+
+[node name="dirt37" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -102, -60 )
+texture = ExtResource( 14 )
+
+[node name="dirt38" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -101, -64 )
+texture = ExtResource( 14 )
+
+[node name="dirt39" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -103, -69 )
+texture = ExtResource( 14 )
+
+[node name="dirt46" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -87, -58 )
+texture = ExtResource( 14 )
+
+[node name="dirt47" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -75, -58 )
+texture = ExtResource( 14 )
+
+[node name="dirt48" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -75, -67 )
+texture = ExtResource( 14 )
+
+[node name="dirt49" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -76, -76 )
+texture = ExtResource( 14 )
+
+[node name="dirt50" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -76, -85 )
+texture = ExtResource( 14 )
+
+[node name="dirt51" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -75, -91 )
+texture = ExtResource( 14 )
+
+[node name="dirt40" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -100, -77 )
+texture = ExtResource( 14 )
+
+[node name="dirt41" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -97, -84 )
+texture = ExtResource( 14 )
+
+[node name="dirt42" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -98, -90 )
+texture = ExtResource( 14 )
+
+[node name="dirt43" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -92, -95 )
+texture = ExtResource( 14 )
+
+[node name="dirt44" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -86, -95 )
+texture = ExtResource( 14 )
+
+[node name="dirt45" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -76, -96 )
+texture = ExtResource( 14 )
+
+[node name="dirt35" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 157, -161 )
+texture = ExtResource( 14 )
+
+[node name="dirt36" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 167, -161 )
+texture = ExtResource( 14 )
+
+[node name="dirt33" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -12, -180 )
+texture = ExtResource( 14 )
+
+[node name="dirt34" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -12, -185 )
+texture = ExtResource( 14 )
+
+[node name="dirt31" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 228, -109 )
+texture = ExtResource( 14 )
+
+[node name="dirt23" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 212, -147 )
+texture = ExtResource( 14 )
+
+[node name="dirt25" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 223, -144 )
+texture = ExtResource( 14 )
+
+[node name="dirt24" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 222, -148 )
+texture = ExtResource( 14 )
+
+[node name="dirt15" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 30, 116 )
+texture = ExtResource( 14 )
+
+[node name="dirt16" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 21, 115 )
+texture = ExtResource( 14 )
+
+[node name="dirt7" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 47, 60 )
+texture = ExtResource( 14 )
+
+[node name="dirt8" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 78, 68 )
+texture = ExtResource( 14 )
+
+[node name="dirt9" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 74, 33 )
+texture = ExtResource( 14 )
+
+[node name="dirt10" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 74, 33 )
+texture = ExtResource( 14 )
+
+[node name="dirt5" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 43, -24 )
+texture = ExtResource( 15 )
+
+[node name="dirt26" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 95, -130 )
+texture = ExtResource( 15 )
+
+[node name="dirt27" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 113, -129 )
+texture = ExtResource( 15 )
+
+[node name="dirt28" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 114, -131 )
+texture = ExtResource( 15 )
+
+[node name="dirt29" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 110, -134 )
+texture = ExtResource( 15 )
+
+[node name="dirt30" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 98, -134 )
+texture = ExtResource( 15 )
+
+[node name="dirt19" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 39, 111 )
+texture = ExtResource( 15 )
+
+[node name="dirt11" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 24, 39 )
+texture = ExtResource( 15 )
+
+[node name="dirt12" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 34, 41 )
+texture = ExtResource( 15 )
+
+[node name="dirt21" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 189, -175 )
+texture = ExtResource( 19 )
+
+[node name="dirt22" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 263, -139 )
+texture = ExtResource( 19 )
+
+[node name="dirt56" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -8, -144 )
+texture = ExtResource( 22 )
+
+[node name="dirt63" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 79, -166 )
+texture = ExtResource( 22 )
+
+[node name="dirt59" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 48, -162 )
+texture = ExtResource( 22 )
+
+[node name="dirt58" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 40, -175 )
+texture = ExtResource( 22 )
+
+[node name="dirt68" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -118, -134 )
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="dirt57" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 3, -156 )
+texture = ExtResource( 23 )
+
+[node name="dirt67" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 111, -55 )
+texture = ExtResource( 23 )
+
+[node name="dirt64" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 305, -212 )
+texture = ExtResource( 23 )
+
+[node name="dirt65" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 312, -213 )
+texture = ExtResource( 23 )
+
+[node name="dirt60" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 33, -141 )
+texture = ExtResource( 23 )
+
+[node name="Snow" type="Node2D" parent="Snow+Dirt"]
+
+[node name="snow1" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 21, 138 )
+texture = ExtResource( 13 )
+
+[node name="snow9" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 42, 126 )
+texture = ExtResource( 13 )
+
+[node name="snow4" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 59, 140 )
+texture = ExtResource( 13 )
+
+[node name="snow2" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 36, 138 )
+texture = ExtResource( 12 )
+
+[node name="snow6" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 16, 132 )
+texture = ExtResource( 12 )
+
+[node name="snow7" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 13, 128 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 12 )
+
+[node name="snow5" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 32, 135 )
+texture = ExtResource( 12 )
+
+[node name="snow8" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 20, 123 )
+texture = ExtResource( 12 )
+
+[node name="snow3" type="Sprite" parent="Snow+Dirt/Snow"]
+position = Vector2( 47, 137 )
+texture = ExtResource( 11 )
+
 [node name="YSort" type="YSort" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 82, -54 )
+position = Vector2( -88, -115 )
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -45,15 +382,15 @@ position = Vector2( 142, 68 )
 image = ExtResource( 5 )
 
 [node name="Fish" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 73, 160 )
+position = Vector2( 23, 161 )
 image = ExtResource( 5 )
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 157, -171 )
+position = Vector2( 290, -225 )
 image = ExtResource( 5 )
 
 [node name="Apple" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 273, -150 )
+position = Vector2( 276, -150 )
 image = ExtResource( 5 )
 
 [node name="Pussy" parent="YSort/Items" instance=ExtResource( 6 )]
@@ -65,7 +402,7 @@ position = Vector2( -75, -10 )
 image = ExtResource( 5 )
 
 [node name="Bone" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -40, -192 )
+position = Vector2( 45, -181 )
 image = ExtResource( 5 )
 
 [node name="NPCs" type="YSort" parent="YSort"]
@@ -74,7 +411,7 @@ __meta__ = {
 }
 
 [node name="Mother" parent="YSort/NPCs" instance=ExtResource( 7 )]
-position = Vector2( 260, -175 )
+position = Vector2( 278, -172 )
 move_speed = 15.0
 
 [node name="Homeless man" parent="YSort/NPCs" instance=ExtResource( 7 )]
@@ -82,7 +419,7 @@ position = Vector2( 22, -47 )
 move_speed = 15.0
 
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( 228, -28 )
+position = Vector2( 226, -33 )
 
 [node name="Pussy" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -84, -50 )
@@ -91,13 +428,13 @@ position = Vector2( -84, -50 )
 position = Vector2( 49, 160 )
 
 [node name="Grant" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( -45, -157 )
+position = Vector2( 8, -181 )
 
 [node name="Benjamin" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 169, 30 )
 
 [node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( -203, -131 )
+position = Vector2( -132, -114 )
 
 [node name="_DEBUG" type="Node2D" parent="."]
 position = Vector2( 571, -577 )
@@ -162,3 +499,11 @@ position = Vector2( -160, -80 )
 
 [node name="Benjamin" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -104, -136 )
+
+[node name="sign_bus" type="Sprite" parent="."]
+position = Vector2( -12, -205 )
+texture = ExtResource( 21 )
+
+[node name="sign_path" type="Sprite" parent="."]
+position = Vector2( 35, -82 )
+texture = ExtResource( 20 )

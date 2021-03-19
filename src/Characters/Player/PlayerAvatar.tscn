@@ -15,7 +15,7 @@
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 3.50849
-height = 0.983022
+height = 4.0
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -417,13 +417,12 @@ script = ExtResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 0, -10.0243 )
 texture = ExtResource( 10 )
-flip_h = true
 vframes = 3
 hframes = 4
-frame = 10
+frame = 9
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -0.5, -2 )
+position = Vector2( 0, -2 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
@@ -458,5 +457,5 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 11 )
-parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Walk/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0.546075, -0.0204082 )
+parameters/Walk/blend_position = Vector2( 0.578498, 0.0357143 )
