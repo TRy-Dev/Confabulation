@@ -25,6 +25,7 @@ margin_top = -100.0
 margin_bottom = 100.0
 
 [node name="Debug" type="PanelContainer" parent="Screen"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0

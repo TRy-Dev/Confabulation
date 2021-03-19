@@ -10,7 +10,7 @@ onready var anim_mode = anim_tree.get("parameters/playback")
 
 const ITEM_PICK_UP_DURATION = 0.2
 
-const MOVE_MIN_VELOCITY_SQ = pow(2.0, 2.0)
+const MOVE_MIN_VELOCITY_SQ = pow(1.0, 2.0)
 
 func _ready():
 	fsm.connect("state_changed", $StateNameDisplay, "_on_state_changed")
@@ -33,13 +33,26 @@ func pickup_item(item: GroundItem) -> void:
 
 func update():
 	.update()
-	if velocity.length_squared() > MOVE_MIN_VELOCITY_SQ:
-		# move
+	update_animation()
+
+func update_animation():
+	if velocity.length_squared() > 1.1:
 		var move_dir = velocity.normalized()
 		anim_tree.set('parameters/Idle/blend_position', move_dir)
 		anim_tree.set('parameters/Walk/blend_position', move_dir)
 		anim_mode.travel("Walk")
 	else:
-		#idle
+		if _get_input_direction():
+			var move_dir = _get_input_direction().normalized()
+			anim_tree.set('parameters/Idle/blend_position', move_dir)
+			anim_tree.set('parameters/Walk/blend_position', move_dir)
 		anim_mode.travel("Idle")
 
+func set_anim(name):
+	anim_mode.travel(name)
+
+func _get_input_direction() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("right") - Input.get_action_strength("left"),
+		Input.get_action_strength("down") - Input.get_action_strength("up")
+	)

@@ -31,8 +31,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 244, -136 )
-move_speed = 10.0
+position = Vector2( 1, -146 )
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -66,7 +65,7 @@ position = Vector2( -87, -17 )
 image = ExtResource( 5 )
 
 [node name="Bone" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -45, -176 )
+position = Vector2( -40, -192 )
 image = ExtResource( 5 )
 
 [node name="NPCs" type="YSort" parent="YSort"]

@@ -4,6 +4,7 @@ var interaction = null
 
 func enter(previous: State) -> void:
 	owner.velocity = Vector2.ZERO
+	owner.set_anim("Idle")
 	interaction = owner.get_current_interaction()
 	interaction.connect("interaction_finished", self, "_on_interaction_finished")
 

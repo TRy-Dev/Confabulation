@@ -37,7 +37,7 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	var text = ""
 	for l in dialogue["lines"]:
 		if l.find(FLAG_NO_EXIT_STRING) != -1:
-			l.replace(FLAG_NO_EXIT_STRING, "")
+			l = l.replace(FLAG_NO_EXIT_STRING, "")
 			noExit = true
 		text += l + "\n"
 	dialogue_text.text = text
@@ -47,9 +47,10 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	text_tween.interpolate_property(dialogue_text, "percent_visible", 0.0, 1.0, tween_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	text_tween.start()
 	yield(text_tween, "tween_all_completed")
-	for i in range(len(dialogue["choices"])):
-		var choice_text = dialogue["choices"][i]
-		_add_button(choice_text, i)
+	for c in dialogue["choices"]:
+		var choice_text = c["text"]
+		var choice_index = c["index"]
+		_add_button(choice_text, choice_index)
 	if not noExit:
 		_add_button(END_DIALOGUE_TEXT, -1)
 	current_btn_idx = 0

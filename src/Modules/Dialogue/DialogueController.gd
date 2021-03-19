@@ -57,16 +57,19 @@ func _get_current_dialogue() -> Dictionary:
 #			print("Debug option text removed")
 			choices.erase(c)
 			break
-	var choices_texts = []
+	var choices_parsed = []
 	for c in choices:
 		var c_text = c.text
 		c_text = _get_parsed_text(c_text)
 		if c_text != "":
-			choices_texts.append(c_text)
+			choices_parsed.append({
+				"index": c.index,
+				"text": c_text
+			})
 	return {
 		"text": text,
 		"lines": text_lines,
-		"choices": choices_texts
+		"choices": choices_parsed
 	}
 
 # Parse element for custom function calls 
