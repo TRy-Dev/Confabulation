@@ -32,8 +32,13 @@ func start_dialogue(npc: NonPlayerCharacter) -> void:
 
 func _set_dialogue(dialogue: Dictionary) -> void:
 	_clear_option_buttons()
+	var FLAG_NO_EXIT_STRING = '!FL(noExit)'
+	var noExit = false
 	var text = ""
 	for l in dialogue["lines"]:
+		if l.find(FLAG_NO_EXIT_STRING) != -1:
+			l.replace(FLAG_NO_EXIT_STRING, "")
+			noExit = true
 		text += l + "\n"
 	dialogue_text.text = text
 	text_tween.stop_all()
@@ -45,7 +50,8 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	for i in range(len(dialogue["choices"])):
 		var choice_text = dialogue["choices"][i]
 		_add_button(choice_text, i)
-	_add_button(END_DIALOGUE_TEXT, -1)
+	if not noExit:
+		_add_button(END_DIALOGUE_TEXT, -1)
 	current_btn_idx = 0
 	options_buttons[current_btn_idx].grab_focus()
 

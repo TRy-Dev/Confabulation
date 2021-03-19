@@ -94,7 +94,7 @@ position = Vector2( 49, 160 )
 [node name="Grant" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -45, -157 )
 
-[node name="Charlie" parent="YSort/NPCs" instance=ExtResource( 10 )]
+[node name="Benjamin" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 169, 30 )
 
 [node name="_DEBUG" type="Node2D" parent="YSort"]
@@ -158,5 +158,5 @@ position = Vector2( -216, -80 )
 [node name="Grant" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
 position = Vector2( -160, -80 )
 
-[node name="Charlie" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Benjamin" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
 position = Vector2( -104, -136 )
