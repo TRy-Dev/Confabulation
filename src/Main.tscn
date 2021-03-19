@@ -31,7 +31,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 1, -146 )
+position = Vector2( 82, -54 )
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -57,11 +57,11 @@ position = Vector2( 273, -150 )
 image = ExtResource( 5 )
 
 [node name="Pussy" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -87, -37 )
+position = Vector2( -95, -30 )
 image = ExtResource( 5 )
 
 [node name="Fishbone" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -87, -17 )
+position = Vector2( -75, -10 )
 image = ExtResource( 5 )
 
 [node name="Bone" parent="YSort/Items" instance=ExtResource( 6 )]
@@ -85,7 +85,7 @@ move_speed = 15.0
 position = Vector2( 228, -28 )
 
 [node name="Pussy" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( -102, -50 )
+position = Vector2( -84, -50 )
 
 [node name="Sandash" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 49, 160 )
@@ -96,66 +96,69 @@ position = Vector2( -45, -157 )
 [node name="Benjamin" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 169, 30 )
 
-[node name="_DEBUG" type="Node2D" parent="YSort"]
+[node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
+position = Vector2( -203, -131 )
+
+[node name="_DEBUG" type="Node2D" parent="."]
 position = Vector2( 571, -577 )
 
-[node name="Items2" type="YSort" parent="YSort/_DEBUG"]
+[node name="Items" type="YSort" parent="_DEBUG"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Oregano" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Oregano" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -272, -192 )
 image = ExtResource( 5 )
 
-[node name="Fish" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Fish" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -216, -192 )
 image = ExtResource( 5 )
 
-[node name="Worm" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Worm" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -160, -192 )
 image = ExtResource( 5 )
 
-[node name="Apple" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Apple" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -104, -192 )
 image = ExtResource( 5 )
 
-[node name="Pussy" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Pussy" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -272, -248 )
 image = ExtResource( 5 )
 
-[node name="Fishbone" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Fishbone" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -216, -248 )
 image = ExtResource( 5 )
 
-[node name="Bone" parent="YSort/_DEBUG/Items2" instance=ExtResource( 6 )]
+[node name="Bone" parent="_DEBUG/Items" instance=ExtResource( 6 )]
 position = Vector2( -160, -248 )
 image = ExtResource( 5 )
 
-[node name="NPCs2" type="YSort" parent="YSort/_DEBUG"]
+[node name="NPCs" type="YSort" parent="_DEBUG"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Mother" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 7 )]
+[node name="Mother" parent="_DEBUG/NPCs" instance=ExtResource( 7 )]
 position = Vector2( -272, -136 )
 move_speed = 15.0
 
-[node name="Homeless man" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 7 )]
+[node name="Homeless man" parent="_DEBUG/NPCs" instance=ExtResource( 7 )]
 position = Vector2( -216, -136 )
 move_speed = 15.0
 
-[node name="Mrs Smith" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Mrs Smith" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -160, -136 )
 
-[node name="Pussy" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Pussy" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -272, -80 )
 
-[node name="Sandash" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Sandash" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -216, -80 )
 
-[node name="Grant" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Grant" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -160, -80 )
 
-[node name="Benjamin" parent="YSort/_DEBUG/NPCs2" instance=ExtResource( 10 )]
+[node name="Benjamin" parent="_DEBUG/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -104, -136 )

@@ -13,6 +13,7 @@ const ITEM_PICK_UP_DURATION = 0.2
 const MOVE_MIN_VELOCITY_SQ = pow(1.0, 2.0)
 
 func _ready():
+	_set_anim_dir(Vector2.DOWN)
 	fsm.connect("state_changed", $StateNameDisplay, "_on_state_changed")
 	fsm.initialize()
 
@@ -38,14 +39,12 @@ func update():
 func update_animation():
 	if velocity.length_squared() > 1.1:
 		var move_dir = velocity.normalized()
-		anim_tree.set('parameters/Idle/blend_position', move_dir)
-		anim_tree.set('parameters/Walk/blend_position', move_dir)
+		_set_anim_dir(move_dir)
 		anim_mode.travel("Walk")
 	else:
 		if _get_input_direction():
 			var move_dir = _get_input_direction().normalized()
-			anim_tree.set('parameters/Idle/blend_position', move_dir)
-			anim_tree.set('parameters/Walk/blend_position', move_dir)
+			_set_anim_dir(move_dir)
 		anim_mode.travel("Idle")
 
 func set_anim(name):
@@ -56,3 +55,7 @@ func _get_input_direction() -> Vector2:
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
+
+func _set_anim_dir(dir: Vector2):
+	anim_tree.set('parameters/Idle/blend_position', dir)
+	anim_tree.set('parameters/Walk/blend_position', dir)

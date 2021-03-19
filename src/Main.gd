@@ -12,8 +12,12 @@ func _ready() -> void:
 	camera_controller.set_target_instant(player)
 	camera_controller.set_zoom_level("far", false)
 	camera_controller.set_zoom_level("medium")
-#	
+
 	for npc in npc_container.get_children():
+		npc.connect("dialogue_started", ui, "_on_dialogue_started")
+		
+	# DEBUG NPCS
+	for npc in $_DEBUG/NPCs.get_children():
 		npc.connect("dialogue_started", ui, "_on_dialogue_started")
 
 func _physics_process(delta):

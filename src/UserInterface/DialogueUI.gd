@@ -14,12 +14,16 @@ var options_buttons = []
 var current_btn_idx = -1
 
 var current_interaction = null
+var current_npc :NonPlayerCharacter = null
+
+var destroy_npc_after_dialogue = false
 
 func _ready():
 	_finish_dialogue()
 
 func start_dialogue(npc: NonPlayerCharacter) -> void:
 	current_interaction = npc.get_dialogue_interaction()
+	current_npc = npc
 	npc_image.texture = npc.get_image()
 	npc_name.text = npc.get_name()
 	var dialogue = DialogueController.start_dialogue(npc.get_dialogue_name())
@@ -34,11 +38,15 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	_clear_option_buttons()
 	var FLAG_NO_EXIT_STRING = '!FL(noExit)'
 	var noExit = false
+	var FLAG_DESTROY_NPC_STRING = "!FL(destroy_npc)"
 	var text = ""
 	for l in dialogue["lines"]:
 		if l.find(FLAG_NO_EXIT_STRING) != -1:
 			l = l.replace(FLAG_NO_EXIT_STRING, "")
 			noExit = true
+		if l.find(FLAG_DESTROY_NPC_STRING) != -1:
+			l = l.replace(FLAG_DESTROY_NPC_STRING, "")
+			destroy_npc_after_dialogue = true
 		text += l + "\n"
 	dialogue_text.text = text
 	text_tween.stop_all()
@@ -47,23 +55,36 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	text_tween.interpolate_property(dialogue_text, "percent_visible", 0.0, 1.0, tween_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	text_tween.start()
 	yield(text_tween, "tween_all_completed")
-	for c in dialogue["choices"]:
-		var choice_text = c["text"]
-		var choice_index = c["index"]
-		_add_button(choice_text, choice_index)
+	if not destroy_npc_after_dialogue:
+		for c in dialogue["choices"]:
+			var choice_text = c["text"]
+			var choice_index = c["index"]
+			_add_button(choice_text, choice_index)
 	if not noExit:
 		_add_button(END_DIALOGUE_TEXT, -1)
 	current_btn_idx = 0
 	options_buttons[current_btn_idx].grab_focus()
 
+func _destroy_current_npc():
+	if not current_npc:
+		print("HEY! Trying to destroy npc, but no curret npc found!")
+		return
+	current_npc.destroy()
+
 func _finish_dialogue():
-	if current_interaction:
-		current_interaction.finish()
 	_clear_option_buttons()
+	if not current_interaction:
+		print("HEY! Theres no current_interaction when trying to finish dialogue!")
+	else:
+		current_interaction.finish()
+	if destroy_npc_after_dialogue:
+		_destroy_current_npc()
 	npc_image.texture = null
 	npc_name.text = ""
 	dialogue_text.text = ""
 	current_interaction = null
+	current_npc = null
+	destroy_npc_after_dialogue = false
 
 func _add_button(text: String, idx: int) -> void:
 	var btn = Button.new()

@@ -24,3 +24,6 @@ func get_image():
 
 func get_name() -> String:
 	return "NPC name placeholder"
+
+func destroy():
+	queue_free()

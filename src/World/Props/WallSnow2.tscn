@@ -4,10 +4,10 @@
 [ext_resource path="res://src/World/Props/Prop.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 4 )
+extents = Vector2( 6, 11 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6, 4 )
+extents = Vector2( 6, 11 )
 
 [node name="WallSnow2" instance=ExtResource( 2 )]
 
@@ -16,7 +16,7 @@ position = Vector2( 0, -6 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" parent="." index="1"]
-position = Vector2( -18, -4 )
+position = Vector2( -18, -11 )
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource( 1 )
