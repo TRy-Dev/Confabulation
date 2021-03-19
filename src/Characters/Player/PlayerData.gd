@@ -12,7 +12,8 @@ var achievements = {
 	"oregano": {
 		"text": "Help make the best spaghetti ever",
 		"image": DEBUG_IMAGE,
-#		achi["unlocked"] = false
+#		"unlocked" = false,
+#		"points": 4,
 	},
 	"good_heart": {
 		"text": "Share food with someone in need",

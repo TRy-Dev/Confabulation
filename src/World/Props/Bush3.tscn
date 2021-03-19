@@ -10,7 +10,7 @@ height = 4.0
 [node name="Bush3" instance=ExtResource( 2 )]
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 0, -9 )
+position = Vector2( 0, -9.5 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" parent="." index="1"]

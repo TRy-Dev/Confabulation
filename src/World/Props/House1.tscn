@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/art/ola/world/house_1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 42, 22 )
+extents = Vector2( 42, 18 )
 
 [node name="House1" instance=ExtResource( 1 )]
 
@@ -13,7 +13,7 @@ position = Vector2( 0, -39 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" parent="." index="1"]
-position = Vector2( 0, -22 )
+position = Vector2( 0, -18 )
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource( 1 )
