@@ -20,7 +20,7 @@ height = 4.0
 [sub_resource type="Animation" id=3]
 length = 0.001
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=26]
 resource_name = "idle_down"
 length = 0.8
 loop = true
@@ -143,7 +143,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=27]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -224,7 +224,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=28]
 resource_name = "walk_left"
 length = 0.8
 loop = true
@@ -265,7 +265,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=29]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -305,7 +305,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=30]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -417,7 +417,7 @@ position = Vector2( 0, -10.0243 )
 texture = ExtResource( 10 )
 vframes = 3
 hframes = 4
-frame = 10
+frame = 8
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, -2 )
@@ -442,14 +442,14 @@ custom_fonts/font = ExtResource( 8 )
 
 [node name="AnimationPlayer" parent="." index="5"]
 anims/_reset = SubResource( 3 )
-anims/idle_down = SubResource( 4 )
+anims/idle_down = SubResource( 26 )
 anims/idle_left = SubResource( 5 )
 anims/idle_right = SubResource( 6 )
-anims/idle_up = SubResource( 7 )
+anims/idle_up = SubResource( 27 )
 anims/walk_down = SubResource( 8 )
-anims/walk_left = SubResource( 9 )
-anims/walk_right = SubResource( 10 )
-anims/walk_up = SubResource( 11 )
+anims/walk_left = SubResource( 28 )
+anims/walk_right = SubResource( 29 )
+anims/walk_up = SubResource( 30 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="6"]
 tree_root = SubResource( 24 )

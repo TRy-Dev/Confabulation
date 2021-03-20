@@ -193,7 +193,7 @@ scale = Vector2( -1, 1 )
 position = Vector2( 276, -83 )
 
 [node name="Bush32" parent="Props" instance=ExtResource( 45 )]
-position = Vector2( 261, -139 )
+position = Vector2( 265, -138 )
 
 [node name="Bush42" parent="Props" instance=ExtResource( 45 )]
 position = Vector2( -188, -100 )
@@ -277,7 +277,7 @@ position = Vector2( 347, -50 )
 position = Vector2( 160, -161 )
 
 [node name="Stump2" parent="Props" instance=ExtResource( 17 )]
-position = Vector2( 180, -5 )
+position = Vector2( 175, -22 )
 
 [node name="Stump3" parent="Props" instance=ExtResource( 28 )]
 position = Vector2( 231, -61 )
@@ -383,6 +383,7 @@ position = Vector2( 806, -46 )
 texture = ExtResource( 48 )
 
 [node name="PondCollision" type="StaticBody2D" parent="."]
+modulate = Color( 1, 1, 1, 0.313726 )
 collision_layer = 2
 collision_mask = 0
 __meta__ = {

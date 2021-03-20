@@ -33,6 +33,9 @@ onready var move_dirs = {
 }
 
 func _ready():
+	AudioController.lerp_music_volume(-60, 0.0)
+	AudioController.music.play("immersed")
+	AudioController.lerp_music_volume(-20, 6.0)
 	AnimationController.reset(anim_player)
 	for dir in move_dirs.values():
 		var anim_p = dir["anim_player"]
@@ -42,7 +45,7 @@ func _ready():
 	name_input.release_focus()
 	Courtain.play("show", true)
 	$CameraController.set_zoom_level("medium", false)
-	_init_state(STATES.INIT)
+	call_deferred("_init_state", STATES.INIT)
 
 func _physics_process(delta):
 	_update_state()
@@ -55,17 +58,21 @@ func _init_state(st: int):
 		return
 	match st:
 		STATES.INIT:
-			AnimationController.play(anim_player, "init")
+			AnimationController.play(anim_player, "init", false)
 		STATES.NAME:
-			AnimationController.play(anim_player, "name")
+			AudioController.sfx.play("ui_proceed")
+			AnimationController.play(anim_player, "name", false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 			name_input.grab_focus()
 		STATES.MOVE:
-			AnimationController.play(anim_player, "move")
+			AudioController.sfx.play("ui_proceed")
+			AnimationController.play(anim_player, "move", false)
 			name_input.release_focus()
 		STATES.TRANS_TO_MAIN:
 			state = st
-			yield(get_tree().create_timer(1.0), "timeout")
+			AudioController.lerp_music_volume(-50, 6.0)
+			yield(get_tree().create_timer(2.0), "timeout")
+			AudioController.sfx.play("wind_small")
 			Courtain.play("show")
 			yield(Courtain.anim_player, "animation_finished")
 			SceneController.load_scene(next_scene)
@@ -79,7 +86,7 @@ func _update_state():
 		STATES.NAME:
 			if Input.is_action_just_pressed("interact"):
 				if len(name_input.text) > 0:
-					PlayerData.set_player_name(name_input.text)
+					PlayerData.set_player_name(name_input.text.capitalize())
 					_init_state(STATES.MOVE)
 		STATES.MOVE:
 			for dir in move_dirs.keys():
@@ -120,7 +127,7 @@ func _on_LineEdit_text_changed(new_text):
 	new_text = new_text.replace("!", "")
 	if len(new_text) > 0 and not space_hint_shown:
 		space_hint_shown = true
-		AnimationController.play(anim_player, "show_name_hint")
+		AnimationController.play(anim_player, "show_name_hint", false)
 	name_input.text = new_text
 	name_input.caret_position = len(new_text)
 

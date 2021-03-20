@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=22]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=23]
 [ext_resource path="res://assets/art/ola/npcs/homeless.png" type="Texture" id=24]
+[ext_resource path="res://assets/art/ola/npcs/fisherman.png" type="Texture" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
@@ -109,6 +110,22 @@ texture = ExtResource( 17 )
 
 [node name="dirt66" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 140, -3 )
+texture = ExtResource( 17 )
+
+[node name="dirt80" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 160, -18 )
+texture = ExtResource( 17 )
+
+[node name="dirt83" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 161, -26 )
+texture = ExtResource( 17 )
+
+[node name="dirt81" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 185, -15 )
+texture = ExtResource( 17 )
+
+[node name="dirt82" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 188, -25 )
 texture = ExtResource( 17 )
 
 [node name="dirt62" type="Sprite" parent="Snow+Dirt/Dirt"]
@@ -329,7 +346,7 @@ position = Vector2( 189, -175 )
 texture = ExtResource( 19 )
 
 [node name="dirt22" type="Sprite" parent="Snow+Dirt/Dirt"]
-position = Vector2( 263, -139 )
+position = Vector2( 266, -138 )
 texture = ExtResource( 19 )
 
 [node name="dirt56" type="Sprite" parent="Snow+Dirt/Dirt"]
@@ -419,7 +436,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 307, -124 )
+position = Vector2( 2, 154 )
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -432,10 +449,6 @@ __meta__ = {
 position = Vector2( 142, 68 )
 sort_enabled = true
 
-[node name="Fish" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 23, 161 )
-sort_enabled = true
-
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
 position = Vector2( 159, -175 )
 sort_enabled = true
@@ -444,25 +457,13 @@ sort_enabled = true
 position = Vector2( 247, -225 )
 sort_enabled = true
 
-[node name="Pussy" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -95, -30 )
-sort_enabled = true
-
-[node name="Fishbone" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( -75, -10 )
-sort_enabled = true
-
-[node name="Bone" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 45, -181 )
-sort_enabled = true
-
 [node name="NPCs" type="YSort" parent="YSort"]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Mother" parent="YSort/NPCs" instance=ExtResource( 7 )]
-position = Vector2( 253, -128 )
+position = Vector2( 255, -137 )
 move_speed = 15.0
 
 [node name="Homeless man" parent="YSort/NPCs" instance=ExtResource( 7 )]
@@ -470,10 +471,11 @@ position = Vector2( 18, -19 )
 move_speed = 15.0
 
 [node name="Sprite" parent="YSort/NPCs/Homeless man" index="0"]
+position = Vector2( 0, -15.1453 )
 texture = ExtResource( 24 )
 
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( 226, -33 )
+position = Vector2( 239, -46 )
 
 [node name="Sprite" parent="YSort/NPCs/Mrs Smith" index="0"]
 texture = ExtResource( 5 )
@@ -482,7 +484,16 @@ texture = ExtResource( 5 )
 position = Vector2( -84, -50 )
 
 [node name="Sandash" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( 49, 160 )
+position = Vector2( 38, 179 )
+
+[node name="Sprite" parent="YSort/NPCs/Sandash" index="0"]
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" parent="YSort/NPCs/Sandash" index="1"]
+position = Vector2( -1, -4 )
+
+[node name="DialogueInteraction" parent="YSort/NPCs/Sandash" index="2"]
+position = Vector2( 5, -15 )
 
 [node name="Grant" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 8, -181 )
@@ -615,3 +626,5 @@ shape = SubResource( 2 )
 [editable path="YSort/NPCs/Homeless man"]
 
 [editable path="YSort/NPCs/Mrs Smith"]
+
+[editable path="YSort/NPCs/Sandash"]

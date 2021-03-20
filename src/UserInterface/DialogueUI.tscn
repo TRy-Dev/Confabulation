@@ -5,9 +5,9 @@
 [ext_resource path="res://assets/ui/new_styleboxflat.tres" type="StyleBox" id=3]
 
 [node name="DialogueUI" type="PanelContainer"]
-margin_right = 548.0
-margin_bottom = 166.0
-rect_min_size = Vector2( 610, 0 )
+margin_right = 618.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 610, 400 )
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -18,11 +18,11 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 610.0
-margin_bottom = 192.0
+margin_bottom = 392.0
 
 [node name="Npc" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 148.0
-margin_bottom = 184.0
+margin_bottom = 384.0
 custom_constants/separation = 4
 
 [node name="ImageContainer" type="PanelContainer" parent="HBoxContainer/Npc"]
@@ -47,7 +47,7 @@ valign = 1
 [node name="Dialogue" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 152.0
 margin_right = 602.0
-margin_bottom = 184.0
+margin_bottom = 384.0
 size_flags_horizontal = 3
 custom_constants/separation = 8
 

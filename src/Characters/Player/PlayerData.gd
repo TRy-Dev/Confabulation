@@ -53,7 +53,7 @@ func add_item(name) -> void:
 		if name == "Apple":
 			unlock_achievement("two_apples")
 		print("HEY! Player already has item: %s" %name)
-		return
+#		return
 	inventory[name] = get_item_texture_by_name(name)
 	emit_signal("inventory_updated", inventory)
 

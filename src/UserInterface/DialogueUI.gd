@@ -67,12 +67,14 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	text_tween.start()
 	yield(text_tween, "tween_all_completed")
 	if not destroy_npc_after_dialogue:
+		var first_button = true
 		for c in dialogue["choices"]:
 			var choice_text = c["text"]
 			var choice_index = c["index"]
-			_add_button(choice_text, choice_index)
+			_add_button(choice_text, choice_index, first_button)
+			first_button = false
 	if not noExit:
-		_add_button(END_DIALOGUE_TEXT, -1)
+		_add_button(END_DIALOGUE_TEXT, -1, false)
 	current_btn_idx = 0
 	options_buttons[current_btn_idx].grab_focus()
 
@@ -98,11 +100,12 @@ func _finish_dialogue():
 	current_npc = null
 	destroy_npc_after_dialogue = false
 
-func _add_button(text: String, idx: int) -> void:
+func _add_button(text: String, idx: int, is_first: bool) -> void:
 	var btn = button_prefab.instance()
 	dialogue_options_container.add_child(btn)
 	text = text.replace("<br>", "\n")
 	btn.get_node("Label").text = text
+	btn.is_first = is_first
 	btn.connect("pressed", self, "_on_choice_selected", [idx])
 	options_buttons.append(btn)
 
@@ -114,7 +117,9 @@ func _clear_option_buttons():
 func _on_choice_selected(idx) -> void:
 	options_buttons[current_btn_idx].release_focus()
 	if idx < 0:
+		AudioController.sfx.play("ui_proceed")
 		_finish_dialogue()
 		return
+	AudioController.sfx.play("ui_proceed")
 	var dialogue = DialogueController.select_option(idx)
 	_set_dialogue(dialogue)

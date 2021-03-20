@@ -1,13 +1,15 @@
 extends Node2D
 
+# TODO: allow for sfx to be placed without folder in SFX_PATH (for single clips, without randomization)
+
 onready var _sources_0d = $Sources0D
 onready var _sources_2d = $Sources2D
 
 var _clips := {}
 
 const MAX_AUDIO_SOURCES := 8
-const MIN_PITCH := 0.9
-const MAX_PITCH := 1.1
+const MIN_PITCH := 1.0 #0.95
+const MAX_PITCH := 1.0#1.05
 const SFX_PATH := "res://assets/audio/sfx"
 
 const SOURCE_2D_MAX_DISTANCE := 200.0

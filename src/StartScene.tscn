@@ -188,12 +188,12 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 4 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
 }
 
 [sub_resource type="Animation" id=12]
-length = 6.0
+length = 4.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
 tracks/0/interp = 1
@@ -222,7 +222,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2 )
+"times": PoolRealArray( 0, 1 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath("UI/Name/VBoxContainer/Hint:modulate:a")
@@ -242,7 +242,7 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 2, 6 )
+"times": PoolRealArray( 1, 4 )
 }
 
 [sub_resource type="Animation" id=13]
@@ -289,7 +289,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=14]
-length = 6.0
+length = 2.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
 tracks/0/interp = 1
@@ -328,7 +328,7 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6 )
+"times": PoolRealArray( 0, 2 )
 }
 
 [node name="StartScene" type="Node2D"]
@@ -379,6 +379,7 @@ __meta__ = {
 }
 
 [node name="WontNeedLabel" type="Label" parent="UI/Init/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 12.0
 margin_right = 140.0
 margin_bottom = 22.0
@@ -451,6 +452,7 @@ placeholder_alpha = 0.2
 caret_blink = true
 
 [node name="Hint" type="Label" parent="UI/Name/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 28.0
 margin_right = 80.0
 margin_bottom = 51.0
@@ -468,6 +470,7 @@ __meta__ = {
 }
 
 [node name="Move" type="Control" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -58.0504
