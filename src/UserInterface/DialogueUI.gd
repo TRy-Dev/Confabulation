@@ -2,6 +2,7 @@ extends PanelContainer
 
 signal dialogue_finished()
 
+onready var npc_image_container = $HBoxContainer/Npc/ImageContainer
 onready var npc_image = $HBoxContainer/Npc/ImageContainer/Image
 onready var npc_name = $HBoxContainer/Npc/Name
 onready var dialogue_text = $HBoxContainer/Dialogue/Text
@@ -22,6 +23,8 @@ var destroy_npc_after_dialogue = false
 
 var button_prefab = preload("res://src/UserInterface/OptionButton.tscn")
 
+const TEXT_SHOW_DELAY = 0.5
+
 func _ready():
 	_finish_dialogue()
 
@@ -33,6 +36,8 @@ func start_dialogue(npc: NonPlayerCharacter) -> void:
 	if nm == "Death":
 		nm = ""
 	npc_name.text = nm
+	npc_image_container.get("custom_styles/panel").bg_color = npc.ui_color
+	yield(get_tree().create_timer(TEXT_SHOW_DELAY), "timeout")
 	var dialogue = DialogueController.start_dialogue(npc.get_dialogue_name())
 	if not dialogue.text:
 		print("Hey! Dialogue %s not found. Dialogue dict:" %npc.get_dialogue_name())
@@ -58,6 +63,8 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 			destroy_npc_after_dialogue = true
 		text += l + "\n"
 	text = text.rstrip("\n")
+#	text = text.strip_escapes()
+	text = text.strip_edges()
 	dialogue_text.percent_visible = 0.0
 	dialogue_text.text = text
 	text_tween.stop_all()
@@ -66,15 +73,15 @@ func _set_dialogue(dialogue: Dictionary) -> void:
 	text_tween.interpolate_property(dialogue_text, "percent_visible", 0.0, 1.0, tween_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	text_tween.start()
 	yield(text_tween, "tween_all_completed")
+	var first_button = true
 	if not destroy_npc_after_dialogue:
-		var first_button = true
 		for c in dialogue["choices"]:
 			var choice_text = c["text"]
 			var choice_index = c["index"]
 			_add_button(choice_text, choice_index, first_button)
 			first_button = false
 	if not noExit:
-		_add_button(END_DIALOGUE_TEXT, -1, false)
+		_add_button(END_DIALOGUE_TEXT, -1, first_button)
 	current_btn_idx = 0
 	options_buttons[current_btn_idx].grab_focus()
 

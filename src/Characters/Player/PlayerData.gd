@@ -8,12 +8,17 @@ var inventory = {}
 
 var DEBUG_IMAGE = preload("res://assets/art/debug/rect_16.png")
 
+# name -> image
+var item_texture_map = {
+	"oregano": preload("res://assets/art/ola/items/oregano.png"),
+#	"Apple": preload("path to apple image")
+}
+
 var achievements = {
 	"oregano": {
 		"text": "Help make the best spaghetti ever",
-		"image": DEBUG_IMAGE,
+		"image": get_item_texture_by_name("oregano"),
 #		"unlocked" = false,
-#		"points": 4,
 	},
 	"good_heart": {
 		"text": "Share food with someone in need",
@@ -22,13 +27,31 @@ var achievements = {
 	"two_apples": {
 		"text": "2 apples a day...",
 		"image": DEBUG_IMAGE
+	},
+	"quiz_won": {
+		"text": "Complete dinosaur knowledge quiz",
+		"image": DEBUG_IMAGE
+	},
+	"patient": {
+		"text": "Be patient",
+		"image": DEBUG_IMAGE
+	},
+	"pussy": {
+		"text": "Bring Pussy home",
+		"image": DEBUG_IMAGE
+	},
+	"dog_bone": {
+		"text": "Give bone to Benjamin",
+		"image": DEBUG_IMAGE
+	},
+	"trader": {
+		"text": "Exchange bones",
+		"image": DEBUG_IMAGE
+	},
+	"farewell": {
+		"text": "Say goodbye to everyone",
+		"image": DEBUG_IMAGE
 	}
-}
-
-# name -> image
-var item_texture_map = {
-	"oregano": preload("res://assets/art/ola/items/oregano.png"),
-#	"Apple": preload("path to apple image")
 }
 
 var achievements_unlocked = 0
@@ -73,7 +96,7 @@ func unlock_achievement(name) -> void:
 		print("HEY! Trying to unlock non existing achievement: %s" %name)
 		return
 	achievements_unlocked += 1
-	AudioController.sfx.play("success")
+	AudioController.sfx.play("achievement")
 	achievements[name]["unlocked"] = true
 	emit_signal("achievements_updated", achievements, achievements_unlocked)
 	DialogueController.set_story_variable("achievement_count", achievements_unlocked)

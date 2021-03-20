@@ -2,9 +2,9 @@ extends CanvasLayer
 
 onready var dialogue_ui = $Screen/DialogueUI
 onready var anim_player = $AnimationPlayer
+onready var achievements_anim_player = $AchievementsAnimPlayer
 
-
-const ANIM_DELAY = 0.5
+#const ANIM_DELAY = 0.5
 
 func _ready():
 	AnimationController.reset(anim_player)
@@ -13,7 +13,7 @@ func _ready():
 func _on_dialogue_started(npc: NonPlayerCharacter) -> void:
 	AnimationController.play(anim_player, "show")
 	yield(anim_player, "animation_finished")
-	yield(get_tree().create_timer(ANIM_DELAY), "timeout")
+#	yield(get_tree().create_timer(ANIM_DELAY), "timeout")
 	dialogue_ui.start_dialogue(npc)
 
 func _on_dialogue_finished():

@@ -10,8 +10,8 @@ func _ready():
 
 func _configure_silent_wolf():
 	SilentWolf.configure({
-		"api_key": "",
-		"game_id": "",
+		"api_key": "GDU5OZGZmu533EPX0kfRvaT1ZGqJY6gZjzP0d6S3",
+		"game_id": "Confabulation",
 		"game_version": GameSettings.game_version,
 		"log_level": 0
 	})

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/art/debug/rect_16.png" type="Texture" id=2]
@@ -9,6 +9,23 @@
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/ui/StartSceneLineEditBox.tres" type="StyleBox" id=8]
 [ext_resource path="res://assets/ui/StartSceneMoveButtonBox.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=11]
+[ext_resource path="res://src/World/Props/Tree3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt1.png" type="Texture" id=13]
+[ext_resource path="res://src/World/Props/TrunkH.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/World/Props/TrunkV.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/World/Props/Stump4.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/World/Props/TrunkS.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/World/Props/Bush11.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/World/Props/Bush8.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/World/Props/Bush13.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt3.png" type="Texture" id=21]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=22]
+[ext_resource path="res://src/World/Props/Tree4.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/World/Props/Bush10.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt4.png" type="Texture" id=25]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=26]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -40,9 +57,9 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="StyleBoxEmpty" id=15]
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
 resource_name = "_reset"
 length = 0.001
 tracks/0/type = "bezier"
@@ -56,7 +73,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=6]
 resource_name = "hide"
 length = 0.5
 tracks/0/type = "bezier"
@@ -70,7 +87,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=7]
 resource_name = "_reset"
 length = 0.001
 tracks/0/type = "bezier"
@@ -84,7 +101,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=8]
 resource_name = "hide"
 length = 0.5
 tracks/0/type = "bezier"
@@ -98,7 +115,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=9]
 resource_name = "_reset"
 length = 0.001
 tracks/0/type = "bezier"
@@ -110,23 +127,23 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=22]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
 }
 
 [sub_resource type="Animation" id=10]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=11]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Name:modulate:a")
@@ -179,7 +196,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 4.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
@@ -192,7 +209,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 4 )
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 4.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
@@ -245,7 +262,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 1, 4 )
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 6.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
@@ -264,8 +281,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 4 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 4 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("UI/Name:modulate:a")
@@ -288,7 +305,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 2.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("UI/Init:modulate:a")
@@ -344,11 +361,10 @@ __meta__ = {
 }
 
 [node name="Init" type="Control" parent="UI"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -62.1402
-margin_bottom = -62.1402
+margin_top = -73.0
+margin_bottom = -73.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -379,7 +395,7 @@ __meta__ = {
 }
 
 [node name="WontNeedLabel" type="Label" parent="UI/Init/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.132044 )
 margin_top = 12.0
 margin_right = 140.0
 margin_bottom = 22.0
@@ -399,8 +415,8 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -66.9695
-margin_bottom = -66.9695
+margin_top = -64.0
+margin_bottom = -64.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -473,8 +489,8 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -58.0504
-margin_bottom = -58.0504
+margin_top = -54.0
+margin_bottom = -54.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -518,7 +534,7 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 14.0
 margin_bottom = 13.0
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
@@ -548,15 +564,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Left"]
-anims/_reset = SubResource( 17 )
-anims/hide = SubResource( 18 )
+anims/_reset = SubResource( 5 )
+anims/hide = SubResource( 6 )
 
 [node name="Label" type="Label" parent="UI/Move/GridContainer/Left"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 14.0
 margin_bottom = 13.0
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
@@ -580,15 +596,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Down"]
-anims/_reset = SubResource( 19 )
-anims/hide = SubResource( 20 )
+anims/_reset = SubResource( 7 )
+anims/hide = SubResource( 8 )
 
 [node name="Label" type="Label" parent="UI/Move/GridContainer/Down"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 14.0
 margin_bottom = 13.0
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
@@ -612,15 +628,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Right"]
-anims/_reset = SubResource( 21 )
-anims/hide = SubResource( 22 )
+anims/_reset = SubResource( 9 )
+anims/hide = SubResource( 10 )
 
 [node name="Label" type="Label" parent="UI/Move/GridContainer/Right"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 14.0
 margin_bottom = 13.0
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
@@ -632,20 +648,146 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="dirt1" type="Sprite" parent="Ground"]
+position = Vector2( -37, 14 )
+texture = ExtResource( 13 )
+
+[node name="dirt7" type="Sprite" parent="Ground"]
+position = Vector2( -64, 9 )
+texture = ExtResource( 10 )
+
+[node name="dirt8" type="Sprite" parent="Ground"]
+position = Vector2( -49, 7 )
+texture = ExtResource( 10 )
+
+[node name="dirt16" type="Sprite" parent="Ground"]
+position = Vector2( -10, -94 )
+texture = ExtResource( 10 )
+
+[node name="dirt17" type="Sprite" parent="Ground"]
+position = Vector2( 6, -91 )
+texture = ExtResource( 10 )
+
+[node name="dirt18" type="Sprite" parent="Ground"]
+position = Vector2( 13, -94 )
+texture = ExtResource( 10 )
+
+[node name="dirt2" type="Sprite" parent="Ground"]
+position = Vector2( -20, 9 )
+texture = ExtResource( 11 )
+
+[node name="dirt3" type="Sprite" parent="Ground"]
+position = Vector2( 6, 15 )
+texture = ExtResource( 21 )
+
+[node name="dirt4" type="Sprite" parent="Ground"]
+position = Vector2( 34, -9 )
+texture = ExtResource( 11 )
+
+[node name="dirt9" type="Sprite" parent="Ground"]
+position = Vector2( -69, -84 )
+texture = ExtResource( 10 )
+
+[node name="dirt11" type="Sprite" parent="Ground"]
+position = Vector2( -53, -95 )
+texture = ExtResource( 10 )
+
+[node name="dirt10" type="Sprite" parent="Ground"]
+position = Vector2( -57, -84 )
+texture = ExtResource( 22 )
+
+[node name="dirt12" type="Sprite" parent="Ground"]
+position = Vector2( -57, -84 )
+texture = ExtResource( 22 )
+
+[node name="dirt5" type="Sprite" parent="Ground"]
+position = Vector2( -44, -90 )
+texture = ExtResource( 13 )
+
+[node name="dirt6" type="Sprite" parent="Ground"]
+position = Vector2( 60, -64 )
+texture = ExtResource( 25 )
+
+[node name="dirt21" type="Sprite" parent="Ground"]
+position = Vector2( 30, -92 )
+texture = ExtResource( 25 )
+
+[node name="dirt20" type="Sprite" parent="Ground"]
+position = Vector2( 24, -89 )
+texture = ExtResource( 25 )
+
+[node name="dirt14" type="Sprite" parent="Ground"]
+position = Vector2( 66, -65 )
+texture = ExtResource( 25 )
+
+[node name="dirt13" type="Sprite" parent="Ground"]
+position = Vector2( 59, -67 )
+texture = ExtResource( 25 )
+
+[node name="dirt15" type="Sprite" parent="Ground"]
+position = Vector2( 61, -47 )
+texture = ExtResource( 21 )
+
+[node name="dirt19" type="Sprite" parent="Ground"]
+position = Vector2( -28, -82 )
+texture = ExtResource( 21 )
+
+[node name="dirt22" type="Sprite" parent="Ground"]
+position = Vector2( 48, -82 )
+texture = ExtResource( 26 )
+
 [node name="YSort" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 0, -6.83794 )
+position = Vector2( 0, -3 )
+
+[node name="Tree3" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( -56, 7 )
+
+[node name="Stump4" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 60, -30 )
+
+[node name="TrunkH" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 117, 30 )
+
+[node name="TrunkS" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -56, -77 )
+
+[node name="TrunkV" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 53, 11 )
+
+[node name="Bush8" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 7, 15 )
+
+[node name="Bush11" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( 37, 20 )
+
+[node name="Bush13" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 34, -8 )
+
+[node name="Tree4" parent="YSort" instance=ExtResource( 23 )]
+position = Vector2( 64, -66 )
+
+[node name="Bush10" parent="YSort" instance=ExtResource( 24 )]
+position = Vector2( -67, -54 )
 
 [node name="CameraController" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -36.1219 )
 zoom = Vector2( 0.18, 0.18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/_reset = SubResource( 10 )
-anims/init = SubResource( 11 )
-anims/move = SubResource( 12 )
-anims/name = SubResource( 13 )
-anims/show_name_hint = SubResource( 14 )
+anims/_reset = SubResource( 11 )
+anims/init = SubResource( 12 )
+anims/move = SubResource( 13 )
+anims/name = SubResource( 14 )
+anims/show_name_hint = SubResource( 15 )
 [connection signal="text_changed" from="UI/Name/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="UI/Name/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]

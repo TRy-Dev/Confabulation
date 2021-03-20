@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Modules/Rendering/Courtain.gd" type="Script" id=1]
 
@@ -20,6 +20,20 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
+resource_name = "set_visible"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/Fade:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
 length = 4.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("CanvasLayer/Fade:color:a")
@@ -48,7 +62,7 @@ layer = 100
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,4 +79,5 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 1 )
 anims/flash = SubResource( 2 )
-anims/show = SubResource( 3 )
+anims/set_visible = SubResource( 3 )
+anims/show = SubResource( 4 )

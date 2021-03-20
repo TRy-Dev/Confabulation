@@ -1,26 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/UserInterface/AchievementUI.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/theme.tres" type="Theme" id=2]
 
 [node name="AchievementUI" type="PanelContainer"]
 margin_right = 64.0
 margin_bottom = 64.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Container" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 57.0
-margin_bottom = 57.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
 
 [node name="Image" type="TextureRect" parent="Container"]
-margin_right = 50.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Container"]
+visible = false
 margin_top = 4.0
 margin_right = 50.0
 margin_bottom = 18.0

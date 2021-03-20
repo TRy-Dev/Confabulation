@@ -1,677 +1,189 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/art/debug/rect_16.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=2]
 [ext_resource path="res://src/EndScene.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/theme.tres" type="Theme" id=4]
+[ext_resource path="res://src/World/Props/Tree6.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Modules/Camera/CameraController.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/ui/StartSceneLineEditBox.tres" type="StyleBox" id=8]
-[ext_resource path="res://assets/ui/StartSceneMoveButtonBox.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt4.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt7.png" type="Texture" id=9]
+[ext_resource path="res://src/World/Props/Tree4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/World/Props/Tree1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/World/Props/Tree5.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/World/Props/Tree2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/World/Props/Tree3.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/World/Props/Tree7.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt1.png" type="Texture" id=16]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt5.png" type="Texture" id=17]
+[ext_resource path="res://src/World/Props/Bush8.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=19]
+[ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=20]
 
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="Animation" id=2]
-resource_name = "_reset"
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
-}
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="Animation" id=5]
-resource_name = "_reset"
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "_reset"
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "_reset"
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
-}
-
-[sub_resource type="Animation" id=11]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("UI/Name:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("UI/Init:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("UI/Init/VBoxContainer/WontNeedLabel:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("UI/Name/VBoxContainer/Hint:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/4/type = "bezier"
-tracks/4/path = NodePath("UI/Move:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=12]
-length = 4.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("UI/Init:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2, 4 )
-}
-
-[sub_resource type="Animation" id=13]
-length = 4.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("UI/Init:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("UI/Init/VBoxContainer/WontNeedLabel:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("UI/Name:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("UI/Name/VBoxContainer/Hint:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/4/type = "bezier"
-tracks/4/path = NodePath("UI/Move:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 1, 4 )
-}
-
-[sub_resource type="Animation" id=14]
-length = 6.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("UI/Init:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1.5, 3 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("UI/Init/VBoxContainer/WontNeedLabel:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 4 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("UI/Name:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3, 6 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("UI/Name/VBoxContainer/Hint:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=15]
-length = 2.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("UI/Init:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("UI/Init/VBoxContainer/WontNeedLabel:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("UI/Name:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("UI/Name/VBoxContainer/Hint:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2 )
-}
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 104, 90 )
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="dirt1" type="Sprite" parent="Ground"]
+position = Vector2( -49, -35 )
+texture = ExtResource( 16 )
+
+[node name="dirt2" type="Sprite" parent="Ground"]
+position = Vector2( 28, -38 )
+texture = ExtResource( 19 )
+
+[node name="dirt14" type="Sprite" parent="Ground"]
+position = Vector2( 67, -77 )
+texture = ExtResource( 19 )
+
+[node name="dirt3" type="Sprite" parent="Ground"]
+position = Vector2( -26, -67 )
+texture = ExtResource( 19 )
+
+[node name="dirt13" type="Sprite" parent="Ground"]
+position = Vector2( -10, -47 )
+texture = ExtResource( 19 )
+
+[node name="dirt4" type="Sprite" parent="Ground"]
+position = Vector2( 49, -37 )
+texture = ExtResource( 8 )
+
+[node name="dirt9" type="Sprite" parent="Ground"]
+position = Vector2( 49, -40 )
+texture = ExtResource( 8 )
+
+[node name="dirt10" type="Sprite" parent="Ground"]
+position = Vector2( 52, -39 )
+texture = ExtResource( 8 )
+
+[node name="dirt5" type="Sprite" parent="Ground"]
+position = Vector2( -1, -28 )
+texture = ExtResource( 17 )
+
+[node name="dirt6" type="Sprite" parent="Ground"]
+position = Vector2( -27, -38 )
+texture = ExtResource( 20 )
+
+[node name="dirt15" type="Sprite" parent="Ground"]
+position = Vector2( -15, -62 )
+texture = ExtResource( 20 )
+
+[node name="dirt16" type="Sprite" parent="Ground"]
+position = Vector2( 15, -59 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 20 )
+
+[node name="dirt7" type="Sprite" parent="Ground"]
+position = Vector2( -35, -74 )
+texture = ExtResource( 9 )
+
+[node name="dirt8" type="Sprite" parent="Ground"]
+position = Vector2( 34, -63 )
+texture = ExtResource( 2 )
+
+[node name="dirt11" type="Sprite" parent="Ground"]
+position = Vector2( 2, -46 )
+texture = ExtResource( 2 )
+
+[node name="dirt12" type="Sprite" parent="Ground"]
+position = Vector2( -5, -45 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -2, -2 )
+
+[node name="Tree1" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( -33, -65 )
+
+[node name="Tree2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 59, 44 )
+
+[node name="Tree10" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -80, 14 )
+
+[node name="Tree3" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -1, -44 )
+
+[node name="Tree4" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 52, -38 )
+
+[node name="Tree5" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( -55, -34 )
+
+[node name="Tree6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -55, 54 )
+
+[node name="Tree8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 39, -60 )
+
+[node name="Tree9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 77, 8 )
+
+[node name="Tree7" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 0, 51 )
+
+[node name="Bush8" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( 68, -76 )
+
+[node name="CameraController" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, -36.1219 )
+zoom = Vector2( 0.18, 0.18 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Debug" type="Control" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -49.0
-margin_bottom = -49.0
+[node name="Achievements" type="Control" parent="UI"]
+margin_top = -37.0
+margin_bottom = -37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI/Debug"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -42.0
-margin_top = -33.0
-margin_right = 42.0
-margin_bottom = 33.0
-custom_styles/normal = SubResource( 16 )
-text = "End Scene
-template
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Leaderboard" type="Control" parent="UI"]
+margin_top = -48.0
+margin_bottom = -48.0
 
-[node name="Init" type="Control" parent="UI"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -62.1402
-margin_bottom = -62.1402
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="EdgeColliders" type="Node2D" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Init"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -70.0
-margin_right = 70.0
-margin_bottom = 52.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="StaticBody2D" type="StaticBody2D" parent="EdgeColliders"]
+collision_layer = 2
+collision_mask = 0
 
-[node name="Click" type="Label" parent="UI/Init/VBoxContainer"]
-margin_right = 140.0
-margin_bottom = 10.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "Click mouse somewhere"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
+position = Vector2( -180, -26 )
+shape = SubResource( 2 )
 
-[node name="WontNeedLabel" type="Label" parent="UI/Init/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 12.0
-margin_right = 140.0
-margin_bottom = 22.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "You won't need it anymore"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
+position = Vector2( 180, -26 )
+shape = SubResource( 2 )
 
-[node name="Name" type="Control" parent="UI"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -66.9695
-margin_bottom = -66.9695
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
+position = Vector2( -2, -173 )
+shape = SubResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Name"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -40.0
-margin_top = -10.1197
-margin_right = 40.0
-margin_bottom = 46.8803
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="UI/Name/VBoxContainer"]
-margin_right = 80.0
-margin_bottom = 10.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "My name?"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LineEdit" type="LineEdit" parent="UI/Name/VBoxContainer"]
-margin_top = 12.0
-margin_right = 80.0
-margin_bottom = 26.0
-mouse_default_cursor_shape = 0
-custom_styles/focus = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/cursor_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-text = "wwwwwwwwww"
-align = 1
-max_length = 10
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-placeholder_text = "Type name here..."
-placeholder_alpha = 0.2
-caret_blink = true
-
-[node name="Hint" type="Label" parent="UI/Name/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 28.0
-margin_right = 80.0
-margin_bottom = 51.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "Press space
-when done"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Move" type="Control" parent="UI"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -58.0504
-margin_bottom = -58.0504
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="UI/Move"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -20.0
-margin_right = 28.0
-margin_bottom = 20.0
-columns = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="_PLACEHOLDER_L" type="TextureRect" parent="UI/Move/GridContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_right = 16.0
-margin_bottom = 16.0
-texture = ExtResource( 2 )
-
-[node name="Up" type="PanelContainer" parent="UI/Move/GridContainer"]
-margin_left = 20.0
-margin_right = 36.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 16 )
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Up"]
-anims/_reset = SubResource( 2 )
-anims/hide = SubResource( 3 )
-
-[node name="Label" type="Label" parent="UI/Move/GridContainer/Up"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 14.0
-margin_bottom = 13.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "W"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="_PLACEHOLDER_R" type="TextureRect" parent="UI/Move/GridContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 40.0
-margin_right = 56.0
-margin_bottom = 16.0
-texture = ExtResource( 2 )
-
-[node name="Left" type="PanelContainer" parent="UI/Move/GridContainer"]
-margin_top = 20.0
-margin_right = 16.0
-margin_bottom = 36.0
-rect_min_size = Vector2( 16, 16 )
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Left"]
-anims/_reset = SubResource( 5 )
-anims/hide = SubResource( 6 )
-
-[node name="Label" type="Label" parent="UI/Move/GridContainer/Left"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 14.0
-margin_bottom = 13.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "A"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Down" type="PanelContainer" parent="UI/Move/GridContainer"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 36.0
-margin_bottom = 36.0
-rect_min_size = Vector2( 16, 16 )
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Down"]
-anims/_reset = SubResource( 7 )
-anims/hide = SubResource( 8 )
-
-[node name="Label" type="Label" parent="UI/Move/GridContainer/Down"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 14.0
-margin_bottom = 13.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "S"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Right" type="PanelContainer" parent="UI/Move/GridContainer"]
-margin_left = 40.0
-margin_top = 20.0
-margin_right = 56.0
-margin_bottom = 36.0
-rect_min_size = Vector2( 16, 16 )
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Move/GridContainer/Right"]
-anims/_reset = SubResource( 9 )
-anims/hide = SubResource( 10 )
-
-[node name="Label" type="Label" parent="UI/Move/GridContainer/Right"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 14.0
-margin_bottom = 13.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "D"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="YSort" type="YSort" parent="."]
-
-[node name="Player" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 0, -6.83794 )
-
-[node name="CameraController" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, -36.1219 )
-zoom = Vector2( 0.18, 0.18 )
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
+position = Vector2( -2, 111 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/_reset = SubResource( 11 )
-anims/init = SubResource( 12 )
-anims/move = SubResource( 13 )
-anims/name = SubResource( 14 )
-anims/show_name_hint = SubResource( 15 )
-[connection signal="text_changed" from="UI/Name/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="UI/Name/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]

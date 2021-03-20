@@ -65,3 +65,12 @@ func lerp_set_max_speed(target_val: float, duration: float) -> void:
 	move_speed_tween.stop_all()
 	move_speed_tween.interpolate_property(self, "move_speed", move_speed, target_val, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	move_speed_tween.start()
+
+func look_at_interaction():
+	var inter = get_current_interaction()
+	if not inter:
+		print("HEY! I have no interaction to look at!")
+		return
+	var dir = inter.global_position - global_position
+	dir = dir.normalized()
+	_set_anim_dir(dir)
