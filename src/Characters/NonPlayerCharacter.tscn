@@ -39,6 +39,7 @@ hframes = 32
 position = Vector2( 0, -2.51047 )
 
 [node name="DialogueInteraction" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 0, -12.25 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/_reset = SubResource( 1 )

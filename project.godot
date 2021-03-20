@@ -153,7 +153,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GWJ31"
-run/main_scene="res://src/Main.tscn"
+run/main_scene="res://src/StartScene.tscn"
 
 [audio]
 

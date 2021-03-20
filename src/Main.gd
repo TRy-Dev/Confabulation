@@ -6,6 +6,7 @@ onready var npc_container = $YSort/NPCs
 onready var ui = $UserInterface
 
 func _ready() -> void:
+	Courtain.play("show", true)
 	AudioController.lerp_music_volume(-60, 0.0)
 	AudioController.music.play("carpe_diem")
 	AudioController.lerp_music_volume(-20, 16.0)

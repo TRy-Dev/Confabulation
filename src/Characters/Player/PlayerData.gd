@@ -33,6 +33,8 @@ var item_texture_map = {
 
 var achievements_unlocked = 0
 
+var player_name = ""
+
 func _ready():
 	reset()
 
@@ -82,3 +84,7 @@ func get_item_texture_by_name(name):
 		return item_texture_map[name]
 	print("HEY! Item texture: `%s` not found" %name)
 	return DEBUG_IMAGE
+
+func set_player_name(name) -> void:
+	player_name = name
+	DialogueController.set_story_variable("player_name", name)

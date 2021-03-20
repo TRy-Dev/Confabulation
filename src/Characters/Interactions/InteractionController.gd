@@ -16,6 +16,7 @@ func start_interaction(player: PlayerAvatar) -> bool:
 		print("No interaction to start")
 		return false
 	interaction.start(player)
+	interaction_ui.interaction_started(interaction)
 	return true
 
 func _on_area_entered(area):

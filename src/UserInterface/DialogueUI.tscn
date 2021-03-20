@@ -18,11 +18,11 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 610.0
-margin_bottom = 194.0
+margin_bottom = 192.0
 
 [node name="Npc" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 148.0
-margin_bottom = 186.0
+margin_bottom = 184.0
 custom_constants/separation = 4
 
 [node name="ImageContainer" type="PanelContainer" parent="HBoxContainer/Npc"]
@@ -40,14 +40,14 @@ rect_min_size = Vector2( 128, 128 )
 [node name="Name" type="Label" parent="HBoxContainer/Npc"]
 margin_top = 148.0
 margin_right = 148.0
-margin_bottom = 186.0
+margin_bottom = 184.0
 align = 1
 valign = 1
 
 [node name="Dialogue" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 152.0
 margin_right = 602.0
-margin_bottom = 186.0
+margin_bottom = 184.0
 size_flags_horizontal = 3
 custom_constants/separation = 8
 

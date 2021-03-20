@@ -463,24 +463,13 @@ __meta__ = {
 
 [node name="Mother" parent="YSort/NPCs" instance=ExtResource( 7 )]
 position = Vector2( 253, -128 )
-collision_mask = 2
-friction_coeff = 0.2
-bounciness = 0.1
-max_speed = 1000.0
-max_force = 10000.0
 move_speed = 15.0
 
 [node name="Homeless man" parent="YSort/NPCs" instance=ExtResource( 7 )]
 position = Vector2( 18, -19 )
-collision_mask = 2
-friction_coeff = 0.2
-bounciness = 0.1
-max_speed = 1000.0
-max_force = 10000.0
 move_speed = 15.0
 
 [node name="Sprite" parent="YSort/NPCs/Homeless man" index="0"]
-position = Vector2( 0, -15.1453 )
 texture = ExtResource( 24 )
 
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/art/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/OptionButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/kenney_mini_16.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -9,17 +11,24 @@ margin_right = 12.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 80, 48 )
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+font_color_focus = Color( 0.192157, 0.341176, 0.172549, 1 )
+font_color_normal = Color( 0.278431, 0.6, 0.737255, 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "txetaaa"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
