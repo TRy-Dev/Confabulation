@@ -29,3 +29,11 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	outline.visible = false
 #	print("%s exited GroundItem %s" %[body.name, name])
+
+
+func _on_GroundItem_area_entered(area):
+	outline.visible = true
+
+
+func _on_GroundItem_area_exited(area):
+	outline.visible = false

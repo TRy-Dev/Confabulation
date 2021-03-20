@@ -8,7 +8,7 @@ func _ready():
 	reset()
 	PlayerData.connect("achievements_updated", self, "_on_achievements_updated")
 
-func _on_achievements_updated(achievements) -> void:
+func _on_achievements_updated(achievements, count) -> void:
 	for achi in achievements.values():
 		if achi["unlocked"]:
 			var new_achi_ui = achi_ui_prefab.instance()

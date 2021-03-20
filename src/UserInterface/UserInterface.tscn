@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 126, 600 ), Vector2( 126, 270 ) ]
+"values": [ Vector2( 126, 600 ), Vector2( 126, 240 ) ]
 }
 
 [node name="UserInterface" type="CanvasLayer"]
@@ -53,9 +53,8 @@ __meta__ = {
 [node name="Inventory" parent="Screen" instance=ExtResource( 2 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -250.0
-margin_right = 96.0
-margin_bottom = 250.0
+margin_top = -271.0
+margin_bottom = 271.0
 
 [node name="Debug" type="PanelContainer" parent="Screen"]
 visible = false
@@ -97,8 +96,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -274.0
-margin_right = 274.0
-margin_bottom = 330.0
+margin_right = 344.0
+margin_bottom = 360.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 1 )

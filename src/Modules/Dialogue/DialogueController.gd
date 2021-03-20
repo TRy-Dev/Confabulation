@@ -108,6 +108,10 @@ func _get_parsed_text(text: String) -> String:
 	print("HEY! Text parser could not find matching for options:\nfn: %s\narg: %s" %[fn, arg])
 	return ""
 
+func set_story_variable(name, val):
+	story.variables_state.set(name, val)
+
+
 #func save_story() -> String:
 #	return story.state.to_json()
 #

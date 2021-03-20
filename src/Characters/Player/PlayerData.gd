@@ -1,7 +1,7 @@
 extends Node
 
 signal inventory_updated(inv)
-signal achievements_updated(ach)
+signal achievements_updated(ach, count)
 
 # name -> image
 var inventory = {}
@@ -31,6 +31,8 @@ var item_texture_map = {
 #	"Apple": preload("path to apple image")
 }
 
+var achievements_unlocked = 0
+
 func _ready():
 	reset()
 
@@ -39,7 +41,10 @@ func reset():
 	emit_signal("inventory_updated", inventory)
 	for achi in achievements.values():
 		achi["unlocked"] = false
-	emit_signal("achievements_updated", achievements)
+	achievements_unlocked = 0
+	emit_signal("achievements_updated", achievements, 0)
+	yield(get_tree(), "idle_frame")
+	DialogueController.set_story_variable("achievement_count", 0)
 
 func add_item(name) -> void:
 	if has_item(name):
@@ -65,9 +70,11 @@ func unlock_achievement(name) -> void:
 	if not achievements.has(name):
 		print("HEY! Trying to unlock non existing achievement: %s" %name)
 		return
+	achievements_unlocked += 1
 	AudioController.sfx.play("success")
 	achievements[name]["unlocked"] = true
-	emit_signal("achievements_updated", achievements)
+	emit_signal("achievements_updated", achievements, achievements_unlocked)
+	DialogueController.set_story_variable("achievement_count", achievements_unlocked)
 
 func get_item_texture_by_name(name):
 	name = name.to_lower()

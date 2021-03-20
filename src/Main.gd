@@ -32,3 +32,8 @@ func restart_scene():
 	SceneController.reload_current()
 	# Reset dialogue
 	DialogueController._initialize()
+
+func _on_EndSceneTrigger_body_entered(body):
+	print("TBI. Start EndScene")
+	pass
+	

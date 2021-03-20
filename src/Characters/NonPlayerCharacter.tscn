@@ -35,6 +35,9 @@ position = Vector2( 0, -15.1453 )
 texture = ExtResource( 5 )
 hframes = 32
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -2.51047 )
+
 [node name="DialogueInteraction" parent="." index="2" instance=ExtResource( 3 )]
 
 [node name="AnimationPlayer" parent="." index="3"]
@@ -42,6 +45,7 @@ anims/_reset = SubResource( 1 )
 anims/idle = SubResource( 2 )
 
 [node name="Control" type="Control" parent="." index="4"]
+visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

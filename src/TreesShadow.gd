@@ -44,3 +44,5 @@ func _add_trunk(pos: Vector2):
 		var idx = Rng.randi(0, TRUNK_TILES_COUNT-1)
 		trunks.set_cellv(pos, idx)
 	
+func _on_EndSceneTrigger_body_entered(body):
+	pass # Replace with function body.
