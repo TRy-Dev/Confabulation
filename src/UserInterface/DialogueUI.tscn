@@ -16,14 +16,14 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 610.0
-margin_bottom = 392.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 614.0
+margin_bottom = 396.0
 
 [node name="Npc" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 144.0
-margin_bottom = 384.0
+margin_bottom = 392.0
 custom_constants/separation = 4
 
 [node name="ImageContainer" type="PanelContainer" parent="HBoxContainer/Npc"]
@@ -50,13 +50,13 @@ valign = 1
 
 [node name="Dialogue" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 148.0
-margin_right = 602.0
-margin_bottom = 384.0
+margin_right = 610.0
+margin_bottom = 392.0
 size_flags_horizontal = 3
 custom_constants/separation = 8
 
 [node name="Text" type="RichTextLabel" parent="HBoxContainer/Dialogue"]
-margin_right = 454.0
+margin_right = 462.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 450, 0 )
 text = "abacacs"

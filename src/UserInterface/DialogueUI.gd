@@ -92,7 +92,6 @@ func _destroy_current_npc():
 	current_npc.destroy()
 
 func _finish_dialogue():
-	_clear_option_buttons()
 	if current_interaction:
 		emit_signal("dialogue_finished")
 		current_interaction.finish()
@@ -100,12 +99,14 @@ func _finish_dialogue():
 		print("HEY! Theres no current_interaction when trying to finish dialogue!")
 	if destroy_npc_after_dialogue:
 		_destroy_current_npc()
-	npc_image.texture = null
-	npc_name.text = ""
-	dialogue_text.text = ""
 	current_interaction = null
 	current_npc = null
 	destroy_npc_after_dialogue = false
+	yield(get_tree().create_timer(0.3), "timeout")
+	npc_image.texture = null
+	npc_name.text = ""
+	dialogue_text.text = ""
+	_clear_option_buttons()
 
 func _add_button(text: String, idx: int, is_first: bool) -> void:
 	var btn = button_prefab.instance()

@@ -9,13 +9,9 @@ func enter(previous: State) -> void:
 	interaction = owner.get_current_interaction()
 	interaction.connect("interaction_finished", self, "_on_interaction_finished")
 
-func exit(next: State) -> void:
-	interaction.disconnect("interaction_finished", self, "_on_interaction_finished")
-	interaction = null
-
-#func update(input: Dictionary) -> void:
-#	if Input.is_action_just_pressed("interact"):
-#		emit_signal("finished", "Move")
 
 func _on_interaction_finished():
+	interaction.disconnect("interaction_finished", self, "_on_interaction_finished")
+	interaction = null
+	yield(get_tree().create_timer(0.3), "timeout")
 	emit_signal("finished", "Move")
