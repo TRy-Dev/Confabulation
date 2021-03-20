@@ -5,6 +5,8 @@ onready var player = $YSort/Player
 onready var npc_container = $YSort/NPCs
 onready var ui = $UserInterface
 
+export(PackedScene) var end_scene
+
 func _ready() -> void:
 	Courtain.play("show", true)
 	AudioController.lerp_music_volume(-60, 0.0)
@@ -19,7 +21,7 @@ func _ready() -> void:
 	for npc in $_DEBUG/NPCs.get_children():
 		npc.connect("dialogue_started", ui, "_on_dialogue_started")
 	set_physics_process(false)
-	yield(get_tree().create_timer(2.0), "timeout")
+	yield(get_tree().create_timer(1.0), "timeout")
 	set_physics_process(true)
 
 func _physics_process(delta):
@@ -34,6 +36,13 @@ func restart_scene():
 	DialogueController._initialize()
 
 func _on_EndSceneTrigger_body_entered(body):
-	print("TBI. Start EndScene")
+	player.lerp_set_max_speed(3.0, 4.0)
+	yield(get_tree().create_timer(2.0), "timeout")
+	Courtain.play("show")
+	AudioController.sfx.play("wind_big")
+	AudioController.lerp_music_volume(-60, 8.0)
+	yield(Courtain.anim_player, "animation_finished")
+	yield(get_tree().create_timer(2.0), "timeout")
+	SceneController.load_scene(end_scene)
 	pass
 	

@@ -7,6 +7,7 @@ onready var fsm = $StateMachine
 onready var sprite = $Sprite
 onready var anim_tree = $AnimationTree
 onready var anim_mode = anim_tree.get("parameters/playback")
+onready var move_speed_tween = $MoveSpeedTween
 
 const ITEM_PICK_UP_DURATION = 0.2
 
@@ -57,3 +58,10 @@ func _get_input_direction() -> Vector2:
 func _set_anim_dir(dir: Vector2):
 	anim_tree.set('parameters/Idle/blend_position', dir)
 	anim_tree.set('parameters/Walk/blend_position', dir)
+
+func lerp_set_max_speed(target_val: float, duration: float) -> void:
+	target_val = max(target_val, 0.0)
+	print("move_speed from %s to %s" %[move_speed, target_val])
+	move_speed_tween.stop_all()
+	move_speed_tween.interpolate_property(self, "move_speed", move_speed, target_val, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	move_speed_tween.start()

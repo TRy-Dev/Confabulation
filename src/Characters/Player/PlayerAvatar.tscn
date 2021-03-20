@@ -417,7 +417,7 @@ position = Vector2( 0, -10.0243 )
 texture = ExtResource( 10 )
 vframes = 3
 hframes = 4
-frame = 8
+frame = 10
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, -2 )
@@ -458,3 +458,5 @@ active = true
 parameters/playback = SubResource( 25 )
 parameters/Idle/blend_position = Vector2( 0.546075, -0.0204082 )
 parameters/Walk/blend_position = Vector2( 0.578498, 0.0357143 )
+
+[node name="MoveSpeedTween" type="Tween" parent="." index="7"]
