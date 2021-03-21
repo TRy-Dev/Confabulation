@@ -304,7 +304,7 @@ position = Vector2( -29, -31 )
 position = Vector2( 347, -50 )
 
 [node name="Stump6" parent="Props" instance=ExtResource( 26 )]
-position = Vector2( 160, -161 )
+position = Vector2( 162, -161 )
 
 [node name="Stump2" parent="Props" instance=ExtResource( 17 )]
 position = Vector2( 175, -22 )

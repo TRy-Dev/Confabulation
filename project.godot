@@ -109,11 +109,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Modules/StateMachine/StateMachine.gd"
 }, {
-"base": "Node2D",
-"class": "Tile",
-"language": "GDScript",
-"path": "res://src/Modules/Grid/Tiles/Tile.gd"
-}, {
 "base": "TileMap",
 "class": "TileController",
 "language": "GDScript",
@@ -145,7 +140,6 @@ _global_script_class_icons={
 "PlayerAvatar": "",
 "State": "",
 "StateMachine": "",
-"Tile": "",
 "TileController": "",
 "TileState": ""
 }
@@ -159,6 +153,7 @@ config/icon="res://icon.png"
 [audio]
 
 default_bus_layout="res://src/Modules/Audio/bus.tres"
+output_latency.web=25
 
 [autoload]
 
@@ -184,6 +179,8 @@ PlayerData="*res://src/Characters/Player/PlayerData.gd"
 [display]
 
 window/size/width=800
+window/size/borderless=true
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

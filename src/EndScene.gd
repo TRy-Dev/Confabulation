@@ -9,6 +9,7 @@ const ACHI_TEXT_DURATION = 5.0
 const ACHI_NO_TEXT_DURATION = 1.0
 
 var thank_you_shown = false
+var can_exit = false
 
 func _ready():
 	AnimationController.reset(anim_player)
@@ -23,6 +24,10 @@ func _ready():
 
 func _physics_process(delta):
 	player.update_fsm()
+	if can_exit:
+		if Input.is_action_just_pressed("interact"):
+			print("Quitting the game")
+			get_tree().quit()
 
 func show_achievements():
 	AnimationController.play(anim_player, "achievements", false)
@@ -51,6 +56,8 @@ func loop_achievements_text():
 		if not thank_you_shown:
 			thank_you_shown = true
 			AnimationController.play(anim_player, "thank_you", false)
+			yield(anim_player, "animation_finished")
+			can_exit = true
 		if len(achievements_unlocked) < 1:
 			return
 

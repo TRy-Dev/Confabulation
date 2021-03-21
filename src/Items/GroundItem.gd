@@ -11,7 +11,7 @@ func _ready():
 	AnimationController.reset(anim_player)
 	$Sprite.texture = PlayerData.get_item_texture_by_name(name)
 	outline.texture = $Sprite.texture
-	outline.visible = true
+	outline.visible = false
 	outline.global_position = $Sprite.global_position
 	$Control/Label.text = name
 

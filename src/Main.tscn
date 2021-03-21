@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
@@ -37,6 +37,8 @@
 [ext_resource path="res://assets/art/ola/npcs/cat_dialogue_trans.png" type="Texture" id=35]
 [ext_resource path="res://assets/art/ola/npcs/dog.png" type="Texture" id=36]
 [ext_resource path="res://assets/art/ola/npcs/dog_dialogue_trans.png" type="Texture" id=37]
+[ext_resource path="res://assets/art/ola/items/worm_pile.png" type="Texture" id=38]
+[ext_resource path="res://assets/art/ola/items/apple.png" type="Texture" id=39]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
@@ -486,6 +488,58 @@ texture = ExtResource( 23 )
 position = Vector2( 33, -141 )
 texture = ExtResource( 23 )
 
+[node name="dirt102" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 163, -186 )
+texture = ExtResource( 23 )
+
+[node name="dirt103" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 161, -170 )
+texture = ExtResource( 23 )
+
+[node name="dirt104" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 162, -176 )
+texture = ExtResource( 23 )
+
+[node name="dirt105" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 163, -181 )
+texture = ExtResource( 23 )
+
+[node name="dirt106" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 163, -187 )
+texture = ExtResource( 23 )
+
+[node name="dirt107" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 157, -168 )
+texture = ExtResource( 23 )
+
+[node name="dirt108" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 166, -169 )
+texture = ExtResource( 23 )
+
+[node name="dirt109" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 167, -175 )
+texture = ExtResource( 23 )
+
+[node name="dirt110" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 168, -180 )
+texture = ExtResource( 23 )
+
+[node name="dirt111" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 169, -185 )
+texture = ExtResource( 23 )
+
+[node name="dirt112" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 154, -180 )
+texture = ExtResource( 23 )
+
+[node name="dirt113" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 156, -189 )
+texture = ExtResource( 23 )
+
+[node name="dirt114" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 171, -192 )
+texture = ExtResource( 23 )
+
 [node name="dirt84" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -79, -171 )
 texture = ExtResource( 23 )
@@ -553,16 +607,22 @@ __meta__ = {
 }
 
 [node name="Oregano" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 142.5, 68 )
+position = Vector2( 141.5, 68 )
 sort_enabled = true
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 159, -175 )
+position = Vector2( 159.5, -175 )
 sort_enabled = true
 
+[node name="Sprite" parent="YSort/Items/Worm" index="2"]
+texture = ExtResource( 38 )
+
 [node name="Apple" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 247, -225 )
+position = Vector2( 247.5, -225 )
 sort_enabled = true
+
+[node name="Sprite" parent="YSort/Items/Apple" index="2"]
+texture = ExtResource( 39 )
 
 [node name="NPCs" type="YSort" parent="YSort"]
 __meta__ = {
@@ -716,6 +776,10 @@ position = Vector2( -243, -120 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndSceneTrigger"]
 shape = SubResource( 2 )
 [connection signal="body_entered" from="EndSceneTrigger" to="." method="_on_EndSceneTrigger_body_entered"]
+
+[editable path="YSort/Items/Worm"]
+
+[editable path="YSort/Items/Apple"]
 
 [editable path="YSort/NPCs/Homeless man"]
 

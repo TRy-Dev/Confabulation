@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name Tile
+#class_name Tile
 
 signal tile_destroyed(tile)
 
