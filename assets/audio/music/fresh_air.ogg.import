@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fresh_air.ogg-232b994f5c4cd31d24eba82dce6ad0e1.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/fresh_air.ogg"
+dest_files=[ "res://.import/fresh_air.ogg-232b994f5c4cd31d24eba82dce6ad0e1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

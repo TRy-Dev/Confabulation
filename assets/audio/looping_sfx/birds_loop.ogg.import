@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/birds_loop.ogg-3041da33d1b64ffac7fa9804bc80e82a.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/looping_sfx/birds_loop.ogg"
+dest_files=[ "res://.import/birds_loop.ogg-3041da33d1b64ffac7fa9804bc80e82a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

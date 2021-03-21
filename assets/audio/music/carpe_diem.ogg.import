@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/carpe_diem.ogg-f220b8f2d2af9c44322843694e779870.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/carpe_diem.ogg"
+dest_files=[ "res://.import/carpe_diem.ogg-f220b8f2d2af9c44322843694e779870.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

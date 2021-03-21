@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/box_key.wav-999ee8a31c32f75bfde8afb04ba7a3c8.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/start_move_button_pressed_3/box_key.wav"
+dest_files=[ "res://.import/box_key.wav-999ee8a31c32f75bfde8afb04ba7a3c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

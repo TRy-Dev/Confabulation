@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heartbreaking.ogg-837e10b11a756999479cf67c3aa69ab2.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/heartbreaking.ogg"
+dest_files=[ "res://.import/heartbreaking.ogg-837e10b11a756999479cf67c3aa69ab2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

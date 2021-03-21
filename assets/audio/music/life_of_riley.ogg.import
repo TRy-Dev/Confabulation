@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/life_of_riley.ogg-80d5533becc171fa1d0719db94c4cc8e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/life_of_riley.ogg"
+dest_files=[ "res://.import/life_of_riley.ogg-80d5533becc171fa1d0719db94c4cc8e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
