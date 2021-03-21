@@ -7,10 +7,9 @@
 radius = 3.5
 
 [node name="Bush4" instance=ExtResource( 1 )]
-position = Vector2( 0.5, 0 )
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 0.5, -8 )
+position = Vector2( 1, -8 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" parent="." index="1"]

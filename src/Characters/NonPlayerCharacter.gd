@@ -43,6 +43,7 @@ func get_name() -> String:
 	return name
 
 func destroy():
+	dialogue_interaction.disable_interaction()
 	var start_pos = sprite.global_position
 	var end_pos = start_pos + MOVE_VECTOR
 	move_up_tween.interpolate_property(sprite, "global_position", start_pos, end_pos, MOVE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN)

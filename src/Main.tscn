@@ -71,6 +71,9 @@ __meta__ = {
 }
 
 [node name="Dirt" type="Node2D" parent="Snow+Dirt"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="dirt1" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 121, -31 )
@@ -94,6 +97,41 @@ position = Vector2( 70, -121 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 18 )
 
+[node name="dirt100" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 271, -219 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt101" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 268, -222 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt95" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 270, -84 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt96" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 261, -84 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt97" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 268, -83 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt98" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 350, -86 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt99" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 357, -84 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
 [node name="dirt87" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -92, -153 )
 scale = Vector2( -1, 1 )
@@ -101,6 +139,16 @@ texture = ExtResource( 18 )
 
 [node name="dirt55" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 3, -84 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt92" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -47, -2 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt93" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -83, -31 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 18 )
 
@@ -132,6 +180,10 @@ texture = ExtResource( 18 )
 position = Vector2( 49, -63 )
 texture = ExtResource( 17 )
 
+[node name="dirt91" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -190, -101 )
+texture = ExtResource( 17 )
+
 [node name="dirt66" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 140, -3 )
 texture = ExtResource( 17 )
@@ -154,6 +206,10 @@ texture = ExtResource( 17 )
 
 [node name="dirt62" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 56, -128 )
+texture = ExtResource( 17 )
+
+[node name="dirt94" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -67, -14 )
 texture = ExtResource( 17 )
 
 [node name="dirt54" type="Sprite" parent="Snow+Dirt/Dirt"]
@@ -223,6 +279,18 @@ texture = ExtResource( 14 )
 
 [node name="dirt39" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -103, -69 )
+texture = ExtResource( 14 )
+
+[node name="dirt88" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -141, -125 )
+texture = ExtResource( 14 )
+
+[node name="dirt89" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -149, -132 )
+texture = ExtResource( 14 )
+
+[node name="dirt90" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -154, -137 )
 texture = ExtResource( 14 )
 
 [node name="dirt46" type="Sprite" parent="Snow+Dirt/Dirt"]
@@ -427,6 +495,9 @@ position = Vector2( -107, -151 )
 texture = ExtResource( 23 )
 
 [node name="Snow" type="Node2D" parent="Snow+Dirt"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="snow1" type="Sprite" parent="Snow+Dirt/Snow"]
 position = Vector2( 21, 138 )
@@ -482,7 +553,7 @@ __meta__ = {
 }
 
 [node name="Oregano" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 142, 68 )
+position = Vector2( 142.5, 68 )
 sort_enabled = true
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
@@ -589,7 +660,7 @@ position = Vector2( 0, -4.76837e-07 )
 position = Vector2( 0, -4 )
 
 [node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
-position = Vector2( -132, -114 )
+position = Vector2( -134, -103 )
 
 [node name="SignBus" type="YSort" parent="YSort"]
 position = Vector2( -12, -183 )

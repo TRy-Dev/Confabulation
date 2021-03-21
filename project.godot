@@ -152,8 +152,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GWJ31"
+config/name="Confabulation"
 run/main_scene="res://src/StartScene.tscn"
+config/icon="res://icon.png"
 
 [audio]
 
