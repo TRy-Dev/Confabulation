@@ -10,6 +10,7 @@ const ACHI_NO_TEXT_DURATION = 0.5
 
 var thank_you_shown = false
 var can_exit = false
+var exiting = false
 
 func _ready():
 	Courtain.play("set_visible")
@@ -28,9 +29,12 @@ func _ready():
 
 func _physics_process(delta):
 	player.update_fsm()
-	if can_exit:
+	if can_exit and not exiting:
 		if Input.is_action_just_pressed("interact"):
+			exiting = true
 			print("Quitting the game")
+			Courtain.play("show")
+			yield(Courtain.anim_player, "animation_finished")
 			get_tree().quit()
 
 func show_achievements():

@@ -112,7 +112,7 @@ position = Vector2( 247, 40 )
 position = Vector2( 122, 70 )
 
 [node name="TomatoPlant2" parent="Props" instance=ExtResource( 32 )]
-position = Vector2( 162, 70 )
+position = Vector2( 142, 70 )
 
 [node name="TomatoPlant3" parent="Props" instance=ExtResource( 32 )]
 position = Vector2( 122, 54 )
@@ -122,7 +122,7 @@ position = Vector2( 143, 53 )
 scale = Vector2( -1, 1 )
 
 [node name="TomatoGrown4" parent="Props" instance=ExtResource( 37 )]
-position = Vector2( 162, 53 )
+position = Vector2( 162, 69 )
 
 [node name="TomatoGrown2" parent="Props" instance=ExtResource( 37 )]
 position = Vector2( 182, 53 )

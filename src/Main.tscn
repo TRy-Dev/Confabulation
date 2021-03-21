@@ -866,6 +866,14 @@ texture = ExtResource( 14 )
 position = Vector2( 24, -14 )
 texture = ExtResource( 15 )
 
+[node name="dirt253" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -7, 29 )
+texture = ExtResource( 15 )
+
+[node name="dirt254" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -58, 30 )
+texture = ExtResource( 15 )
+
 [node name="dirt134" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 309, 20 )
 texture = ExtResource( 15 )
@@ -1174,7 +1182,7 @@ __meta__ = {
 }
 
 [node name="Oregano" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 141.5, 68 )
+position = Vector2( 161.5, 52 )
 sort_enabled = true
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
@@ -1211,7 +1219,7 @@ ui_texture = ExtResource( 30 )
 ui_color = Color( 0.384314, 0.509804, 0.376471, 1 )
 
 [node name="Sprite" parent="YSort/NPCs/Homeless man" index="0"]
-position = Vector2( 0, -15.1453 )
+position = Vector2( 0, -15 )
 texture = ExtResource( 24 )
 
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]
