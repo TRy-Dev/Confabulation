@@ -17,45 +17,55 @@ var item_texture_map = {
 	"fishbone": preload("res://assets/art/ola/items/fish_bone.png"),
 	"pussy": preload("res://assets/art/ola/items/pussy.png"),
 	"worm": preload("res://assets/art/ola/items/worm_pile.png"),
+	# Achievements
+	"dog_bone_ach": preload("res://assets/art/ola/items/dog_bone_ach.png"),
+	"farewell_ach": preload("res://assets/art/ola/items/farewell_ach.png"),
+	"good_heart_ach": preload("res://assets/art/ola/items/good_heart_ach.png"),
+	"oregano_ach": preload("res://assets/art/ola/items/oregano_ach.png"),
+	"patient_ach": preload("res://assets/art/ola/items/patient_ach.png"),
+	"pussy_ach": preload("res://assets/art/ola/items/pussy_ach.png"),
+	"quiz_ach": preload("res://assets/art/ola/items/quiz_won_ach.png"),
+	"trader_ach": preload("res://assets/art/ola/items/trader_ach.png"),
+	"two_apple_ach": preload("res://assets/art/ola/items/two_apple_ach.png"),
 }
 
 var achievements = {
 	"oregano": {
 		"text": "Help make the best spaghetti ever",
-		"image": get_item_texture_by_name("oregano"),
+		"image": get_item_texture_by_name("oregano_ach"),
 #		"unlocked" = true,
 	},
 	"good_heart": {
 		"text": "Share food with someone in need",
-		"image": get_item_texture_by_name("apple"),
+		"image": get_item_texture_by_name("good_heart_ach"),
 	},
 	"two_apples": {
 		"text": "2 apples a day...",
-		"image": get_item_texture_by_name("apple")
+		"image": get_item_texture_by_name("two_apple_ach")
 	},
 	"quiz_won": {
 		"text": "Complete dinosaur knowledge quiz",
-		"image": get_item_texture_by_name("bone")
+		"image": get_item_texture_by_name("quiz_ach")
 	},
 	"patient": {
 		"text": "Be patient",
-		"image": get_item_texture_by_name("fish")
+		"image": get_item_texture_by_name("patient_ach")
 	},
 	"pussy": {
 		"text": "Bring Pussy home",
-		"image": get_item_texture_by_name("pussy")
+		"image": get_item_texture_by_name("pussy_ach")
 	},
 	"dog_bone": {
 		"text": "Give bone to Benjamin",
-		"image": get_item_texture_by_name("bone")
+		"image": get_item_texture_by_name("dog_bone_ach")
 	},
 	"trader": {
 		"text": "Exchange bones",
-		"image": get_item_texture_by_name("fishbone")
+		"image": get_item_texture_by_name("trader_ach")
 	},
 	"farewell": {
 		"text": "Say goodbye to everyone",
-		"image": get_item_texture_by_name("apple")
+		"image": get_item_texture_by_name("farewell_ach")
 	}
 }
 
