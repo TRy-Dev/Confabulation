@@ -17,6 +17,7 @@ const MOVE_VECTOR = Vector2(0.0, -25.0)
 const MOVE_DURATION = 1.5
 
 func _ready():
+	$CollisionShape2D.disabled = false
 	if texture:
 		sprite.texture = texture
 	else:
@@ -44,6 +45,7 @@ func get_name() -> String:
 
 func destroy():
 	dialogue_interaction.call_deferred("disable_interaction")
+	$CollisionShape2D.disabled = true
 	var start_pos = sprite.global_position
 	var end_pos = start_pos + MOVE_VECTOR
 	move_up_tween.interpolate_property(sprite, "global_position", start_pos, end_pos, MOVE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN)

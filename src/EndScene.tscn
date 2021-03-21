@@ -244,9 +244,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -137.5
-margin_top = -135.0
+margin_top = -237.0
 margin_right = 137.5
-margin_bottom = -90.9999
+margin_bottom = -167.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

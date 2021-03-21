@@ -5,8 +5,8 @@ onready var player = $YSort/Player
 onready var anim_player = $AnimationPlayer
 
 const ACHI_DELAY = 8.0
-const ACHI_TEXT_DURATION = 5.0
-const ACHI_NO_TEXT_DURATION = 1.0
+const ACHI_TEXT_DURATION = 3.5
+const ACHI_NO_TEXT_DURATION = 0.5
 
 var thank_you_shown = false
 var can_exit = false

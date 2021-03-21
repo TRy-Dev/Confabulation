@@ -137,7 +137,7 @@ position = Vector2( 336, -132 )
 position = Vector2( 295, -131 )
 
 [node name="Bush3" parent="Props" instance=ExtResource( 20 )]
-position = Vector2( 354, -65 )
+position = Vector2( 354, -67 )
 
 [node name="Bush18" parent="Props" instance=ExtResource( 20 )]
 position = Vector2( 229, -108 )
@@ -176,7 +176,7 @@ position = Vector2( 85, 48 )
 position = Vector2( 37, 37 )
 
 [node name="Bush4" parent="Props" instance=ExtResource( 38 )]
-position = Vector2( 334, -77 )
+position = Vector2( 333, -78 )
 
 [node name="Bush5" parent="Props" instance=ExtResource( 44 )]
 position = Vector2( 291, -77 )
@@ -301,7 +301,7 @@ position = Vector2( -85, -59 )
 position = Vector2( -29, -31 )
 
 [node name="Stump1" parent="Props" instance=ExtResource( 26 )]
-position = Vector2( 347, -50 )
+position = Vector2( 361, -47 )
 
 [node name="Stump6" parent="Props" instance=ExtResource( 26 )]
 position = Vector2( 162, -161 )

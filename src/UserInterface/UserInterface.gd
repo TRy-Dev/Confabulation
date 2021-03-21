@@ -5,6 +5,7 @@ onready var anim_player = $AnimationPlayer
 onready var achi_anim_player = $AchievementsAnimPlayer
 onready var vignette = $Screen/Vignette
 onready var vignette_tween = $VignetteTween
+onready var hide_achi_timer = $HideAchiTimer
 
 var achievements_visible = false
 
@@ -15,6 +16,7 @@ const VIGNETTE_END_INTENSITY = 1.5
 const VIGNETTE_INTERPOLATION_DURATION = 6.0
 
 func _ready():
+	hide_achi_timer.wait_time = ACHI_VISIBLE_DURATION
 	vignette.material.set_shader_param("vignette_intensity", VIGNETTE_START_INTENSITY)
 	$Screen/AchievementsUI.show_text()
 	AnimationController.reset(anim_player)
@@ -34,12 +36,11 @@ func _on_achievements_updated(achievements, count, unlocked_achi) -> void:
 	if count < 1:
 		return
 	if achievements_visible:
+		hide_achi_timer.start()
 		return
 	achievements_visible = true
 	AnimationController.play(achi_anim_player, "show")
-	yield(get_tree().create_timer(ACHI_VISIBLE_DURATION), "timeout")
-	AnimationController.play(achi_anim_player, "show", false, true)
-	achievements_visible = false
+	hide_achi_timer.start()
 
 func _on_npc_destroyed(count):
 	var start_val = vignette.material.get_shader_param("vignette_intensity")
@@ -51,3 +52,7 @@ func _on_npc_destroyed(count):
 
 func interpolate_vignette(val):
 	vignette.material.set_shader_param("vignette_intensity", val)
+
+func _on_HideAchiTimer_timeout():
+	AnimationController.play(achi_anim_player, "show", false, true)
+	achievements_visible = false

@@ -91,6 +91,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Screen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -170,3 +171,7 @@ anims/_reset = SubResource( 4 )
 anims/show = SubResource( 5 )
 
 [node name="VignetteTween" type="Tween" parent="."]
+
+[node name="HideAchiTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="HideAchiTimer" to="." method="_on_HideAchiTimer_timeout"]
