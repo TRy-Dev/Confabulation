@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/UserInterface/AchievementsUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://src/World/Props/Bush8.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=19]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=20]
+[ext_resource path="res://assets/fonts/kenney_mini_24.tres" type="DynamicFont" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 90 )
@@ -37,6 +40,16 @@ tracks/0/keys = {
 "points": PoolRealArray( -120, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CanvasLayer/UI/ThankYou:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "achievements"
@@ -50,6 +63,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( -120, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "thank_you"
+length = 6.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/UI/ThankYou:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6 )
 }
 
 [node name="EndScene" type="Node2D"]
@@ -192,6 +219,33 @@ margin_top = -120.0
 margin_right = 344.0
 margin_bottom = -6.00001
 
+[node name="ThankYou" type="PanelContainer" parent="CanvasLayer/UI"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -137.5
+margin_top = -135.0
+margin_right = 137.5
+margin_bottom = -90.9999
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/ThankYou"]
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 271.0
+margin_bottom = 37.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 21 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+text = "Thank you for playing"
+align = 1
+valign = 1
+
 [node name="EdgeColliders" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="EdgeColliders"]
@@ -217,3 +271,4 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 2 )
 anims/achievements = SubResource( 3 )
+anims/thank_you = SubResource( 5 )

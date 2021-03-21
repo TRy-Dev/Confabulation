@@ -40,6 +40,9 @@ margin_top = -23.9999
 margin_right = 56.0
 margin_bottom = -9.99994
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.192157, 0.341176, 0.172549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
 text = "10.10.10"
 __meta__ = {
 "_edit_use_anchors_": false

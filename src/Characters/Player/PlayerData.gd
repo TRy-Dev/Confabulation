@@ -11,7 +11,12 @@ var DEBUG_IMAGE = preload("res://assets/art/debug/rect_16.png")
 # name -> image
 var item_texture_map = {
 	"oregano": preload("res://assets/art/ola/items/oregano.png"),
-#	"Apple": preload("path to apple image")
+	"apple": preload("res://assets/art/ola/items/apple.png"),
+	"bone": preload("res://assets/art/ola/items/bone.png"),
+	"fish": preload("res://assets/art/ola/items/fish.png"),
+	"fishbone": preload("res://assets/art/ola/items/fish_bone.png"),
+	"pussy": preload("res://assets/art/ola/items/pussy.png"),
+	"worm": preload("res://assets/art/ola/items/worm_pile.png"),
 }
 
 var achievements = {
@@ -22,35 +27,35 @@ var achievements = {
 	},
 	"good_heart": {
 		"text": "Share food with someone in need",
-		"image": DEBUG_IMAGE,
+		"image": get_item_texture_by_name("apple"),
 	},
 	"two_apples": {
 		"text": "2 apples a day...",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("apple")
 	},
 	"quiz_won": {
 		"text": "Complete dinosaur knowledge quiz",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("bone")
 	},
 	"patient": {
 		"text": "Be patient",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("fish")
 	},
 	"pussy": {
 		"text": "Bring Pussy home",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("pussy")
 	},
 	"dog_bone": {
 		"text": "Give bone to Benjamin",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("bone")
 	},
 	"trader": {
 		"text": "Exchange bones",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("fishbone")
 	},
 	"farewell": {
 		"text": "Say goodbye to everyone",
-		"image": DEBUG_IMAGE
+		"image": get_item_texture_by_name("apple")
 	}
 }
 

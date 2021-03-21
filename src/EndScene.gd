@@ -8,6 +8,7 @@ const ACHI_DELAY = 8.0
 const ACHI_TEXT_DURATION = 5.0
 const ACHI_NO_TEXT_DURATION = 1.0
 
+var thank_you_shown = false
 
 func _ready():
 	AnimationController.reset(anim_player)
@@ -18,9 +19,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	yield(get_tree().create_timer(ACHI_DELAY), "timeout")
 	show_achievements()
-#	var submit_name = PlayerData.player_name + "!" + _get_achievement_string()
-#	yield(LeaderboardAPI.submit_score(submit_name, PlayerData.achievements_unlocked), "completed")
-#	show_leaderboard()
+#	submit_and_show_leaderboard()
 
 func _physics_process(delta):
 	player.update_fsm()
@@ -31,9 +30,12 @@ func show_achievements():
 	yield(get_tree().create_timer(0.5), "timeout")
 	loop_achievements_text()
 
-func show_leaderboard():
-	AnimationController.play(anim_player, "leaderboard", false)
-	LeaderboardAPI.all_scores
+func submit_and_show_leaderboard():
+	var submit_name = PlayerData.player_name + "!" + _get_achievement_string()
+	yield(LeaderboardAPI.submit_score(submit_name, PlayerData.achievements_unlocked), "completed")
+	print("Show leaderboard TBI")
+#	AnimationController.play(anim_player, "leaderboard", false)
+#	LeaderboardAPI.all_scores
 
 func loop_achievements_text():
 	var achievements_unlocked = PlayerData.get_unlocked_achievements()
@@ -46,6 +48,11 @@ func loop_achievements_text():
 			achievements.play_anim("show", true)
 			yield(achievements.anim_player, "animation_finished")
 			yield(get_tree().create_timer(ACHI_NO_TEXT_DURATION), "timeout")
+		if not thank_you_shown:
+			thank_you_shown = true
+			AnimationController.play(anim_player, "thank_you", false)
+		if len(achievements_unlocked) < 1:
+			return
 
 func _get_achievement_string() -> String:
 	var s = ""

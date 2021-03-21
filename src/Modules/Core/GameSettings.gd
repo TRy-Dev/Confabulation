@@ -1,3 +1,3 @@
 extends Node
 
-var game_version := "0.0.0"
+var game_version := "1.0.0"
