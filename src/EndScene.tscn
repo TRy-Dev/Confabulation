@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://src/UserInterface/AchievementsUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=2]
 [ext_resource path="res://src/EndScene.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/theme.tres" type="Theme" id=4]
@@ -20,8 +21,36 @@
 [ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=19]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=20]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 90 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "_reset"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/UI/AchievementsUI:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "achievements"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CanvasLayer/UI/AchievementsUI:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource( 3 )
@@ -144,7 +173,9 @@ position = Vector2( 68, -76 )
 position = Vector2( 0, -36.1219 )
 zoom = Vector2( 0.18, 0.18 )
 
-[node name="UI" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
@@ -153,16 +184,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Achievements" type="Control" parent="UI"]
-margin_top = -37.0
-margin_bottom = -37.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Leaderboard" type="Control" parent="UI"]
-margin_top = -48.0
-margin_bottom = -48.0
+[node name="AchievementsUI" parent="CanvasLayer/UI" instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = -120.0
+margin_right = 344.0
+margin_bottom = -6.00001
 
 [node name="EdgeColliders" type="Node2D" parent="."]
 
@@ -172,18 +200,20 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
 position = Vector2( -180, -26 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
 position = Vector2( 180, -26 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
 position = Vector2( -2, -173 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="EdgeColliders/StaticBody2D"]
 position = Vector2( -2, 111 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/_reset = SubResource( 2 )
+anims/achievements = SubResource( 3 )

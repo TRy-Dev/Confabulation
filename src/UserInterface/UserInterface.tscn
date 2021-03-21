@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/Inventory.tscn" type="PackedScene" id=2]
@@ -36,6 +36,34 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 126, 600 ), Vector2( 126, 200 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "_reset"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Screen/AchievementsUI:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "show"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Screen/AchievementsUI:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
 }
 
 [node name="UserInterface" type="CanvasLayer"]
@@ -83,11 +111,12 @@ yellow - GroundItem
 magenta - NPC (talk interaction)"
 
 [node name="AchievementsUI" parent="Screen" instance=ExtResource( 5 )]
-modulate = Color( 1, 1, 1, 0.588235 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -300.0
-margin_right = 300.0
+margin_left = -344.0
+margin_top = -120.0
+margin_right = 344.0
+margin_bottom = -6.00001
 
 [node name="DialogueUI" parent="Screen" instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -102,3 +131,5 @@ anims/_reset = SubResource( 1 )
 anims/show = SubResource( 2 )
 
 [node name="AchievementsAnimPlayer" type="AnimationPlayer" parent="."]
+anims/_reset = SubResource( 3 )
+anims/show = SubResource( 4 )

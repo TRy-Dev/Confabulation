@@ -23,6 +23,7 @@ func _on_player_inventory_updated(inventory: Dictionary) -> void:
 		AnimationController.play(anim_player, "show")
 		shown = true
 	if inventory.size() < 1 and shown:
+		yield(get_tree().create_timer(2.0), "timeout")
 		AnimationController.play(anim_player, "show", false, true)
 		shown = false
 #	yield(anim_player, "animation_finished")

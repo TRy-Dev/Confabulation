@@ -1,7 +1,7 @@
 extends Node
 
 signal inventory_updated(inv)
-signal achievements_updated(ach, count)
+signal achievements_updated(ach, count, unlocked_achi)
 
 # name -> image
 var inventory = {}
@@ -18,7 +18,7 @@ var achievements = {
 	"oregano": {
 		"text": "Help make the best spaghetti ever",
 		"image": get_item_texture_by_name("oregano"),
-#		"unlocked" = false,
+#		"unlocked" = true,
 	},
 	"good_heart": {
 		"text": "Share food with someone in need",
@@ -60,6 +60,9 @@ var player_name = ""
 
 func _ready():
 	reset()
+#	# FOR TESTING, unlock all achievements
+#	for achi in achievements.keys():
+#		achievements[achi]["unlocked"] = true
 
 func reset():
 	inventory = {}
@@ -67,7 +70,7 @@ func reset():
 	for achi in achievements.values():
 		achi["unlocked"] = false
 	achievements_unlocked = 0
-	emit_signal("achievements_updated", achievements, 0)
+	emit_signal("achievements_updated", achievements, 0, null)
 	yield(get_tree(), "idle_frame")
 	DialogueController.set_story_variable("achievement_count", 0)
 
@@ -98,7 +101,7 @@ func unlock_achievement(name) -> void:
 	achievements_unlocked += 1
 	AudioController.sfx.play("achievement")
 	achievements[name]["unlocked"] = true
-	emit_signal("achievements_updated", achievements, achievements_unlocked)
+	emit_signal("achievements_updated", achievements, achievements_unlocked, achievements[name])
 	DialogueController.set_story_variable("achievement_count", achievements_unlocked)
 
 func get_item_texture_by_name(name):
@@ -111,3 +114,10 @@ func get_item_texture_by_name(name):
 func set_player_name(name) -> void:
 	player_name = name
 	DialogueController.set_story_variable("player_name", name)
+
+func get_unlocked_achievements() -> Array:
+	var unlocked = []
+	for achi in PlayerData.achievements.values():
+		if achi["unlocked"]:
+			unlocked.append(achi)
+	return unlocked
