@@ -756,8 +756,6 @@ __meta__ = {
 
 [node name="Player" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 0, -3 )
-mass = 1.0
-should_rotate = false
 
 [node name="Tree3" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -56, 7 )

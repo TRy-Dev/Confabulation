@@ -134,7 +134,7 @@ func set_player_name(name) -> void:
 
 func get_unlocked_achievements() -> Array:
 	var unlocked = []
-	for achi in PlayerData.achievements.values():
+	for achi in achievements.values():
 		if achi["unlocked"]:
 			unlocked.append(achi)
 	return unlocked

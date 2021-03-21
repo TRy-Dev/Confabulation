@@ -24,6 +24,7 @@ var destroy_npc_after_dialogue = false
 var button_prefab = preload("res://src/UserInterface/OptionButton.tscn")
 
 const TEXT_SHOW_DELAY = 0.5
+const IMAGE_BACKGROUND_ALPHA = 150.0 / 255.0
 
 func _ready():
 	_finish_dialogue()
@@ -36,7 +37,9 @@ func start_dialogue(npc: NonPlayerCharacter) -> void:
 	if nm == "Death":
 		nm = ""
 	npc_name.text = nm
-	npc_image_container.get("custom_styles/panel").bg_color = npc.ui_color
+	var color = npc.ui_color
+	color.a = IMAGE_BACKGROUND_ALPHA
+	npc_image_container.get("custom_styles/panel").bg_color = color
 	yield(get_tree().create_timer(TEXT_SHOW_DELAY), "timeout")
 	var dialogue = DialogueController.start_dialogue(npc.get_dialogue_name())
 	if not dialogue.text:
