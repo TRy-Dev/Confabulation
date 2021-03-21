@@ -705,6 +705,14 @@ texture = ExtResource( 22 )
 position = Vector2( -57, -84 )
 texture = ExtResource( 22 )
 
+[node name="dirt23" type="Sprite" parent="Ground"]
+position = Vector2( -57, -84 )
+texture = ExtResource( 22 )
+
+[node name="dirt24" type="Sprite" parent="Ground"]
+position = Vector2( -56, -90 )
+texture = ExtResource( 22 )
+
 [node name="dirt5" type="Sprite" parent="Ground"]
 position = Vector2( -44, -90 )
 texture = ExtResource( 13 )
@@ -748,6 +756,8 @@ __meta__ = {
 
 [node name="Player" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 0, -3 )
+mass = 1.0
+should_rotate = false
 
 [node name="Tree3" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -56, 7 )

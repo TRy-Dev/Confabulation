@@ -18,15 +18,15 @@ var item_texture_map = {
 	"pussy": preload("res://assets/art/ola/items/pussy.png"),
 	"worm": preload("res://assets/art/ola/items/worm_pile.png"),
 	# Achievements
-	"dog_bone_ach": preload("res://assets/art/ola/items/dog_bone_ach.png"),
-	"farewell_ach": preload("res://assets/art/ola/items/farewell_ach.png"),
-	"good_heart_ach": preload("res://assets/art/ola/items/good_heart_ach.png"),
-	"oregano_ach": preload("res://assets/art/ola/items/oregano_ach.png"),
-	"patient_ach": preload("res://assets/art/ola/items/patient_ach.png"),
-	"pussy_ach": preload("res://assets/art/ola/items/pussy_ach.png"),
-	"quiz_ach": preload("res://assets/art/ola/items/quiz_won_ach.png"),
-	"trader_ach": preload("res://assets/art/ola/items/trader_ach.png"),
-	"two_apple_ach": preload("res://assets/art/ola/items/two_apple_ach.png"),
+	"dog_bone_ach": preload("res://assets/art/ola/ach/dog_bone_ach.png"),
+	"farewell_ach": preload("res://assets/art/ola/ach/farewell_ach.png"),
+	"good_heart_ach": preload("res://assets/art/ola/ach/good_heart_ach.png"),
+	"oregano_ach": preload("res://assets/art/ola/ach/oregano_ach.png"),
+	"patient_ach": preload("res://assets/art/ola/ach/patient_ach.png"),
+	"pussy_ach": preload("res://assets/art/ola/ach/pussy_ach.png"),
+	"quiz_ach": preload("res://assets/art/ola/ach/quiz_won_ach.png"),
+	"trader_ach": preload("res://assets/art/ola/ach/trader_ach.png"),
+	"two_apple_ach": preload("res://assets/art/ola/ach/two_apple_ach.png"),
 }
 
 var achievements = {
