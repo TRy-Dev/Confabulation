@@ -618,6 +618,94 @@ texture = ExtResource( 14 )
 position = Vector2( -268, -105 )
 texture = ExtResource( 14 )
 
+[node name="dirt231" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -410, -119 )
+texture = ExtResource( 14 )
+
+[node name="dirt246" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -415, -77 )
+texture = ExtResource( 14 )
+
+[node name="dirt247" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -414, -81 )
+texture = ExtResource( 14 )
+
+[node name="dirt248" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -414, -81 )
+texture = ExtResource( 14 )
+
+[node name="dirt249" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -413, -85 )
+texture = ExtResource( 14 )
+
+[node name="dirt250" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -412, -89 )
+texture = ExtResource( 14 )
+
+[node name="dirt251" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -411, -94 )
+texture = ExtResource( 14 )
+
+[node name="dirt252" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -410, -98 )
+texture = ExtResource( 14 )
+
+[node name="dirt232" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -411, -124 )
+texture = ExtResource( 14 )
+
+[node name="dirt233" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -408, -124 )
+texture = ExtResource( 14 )
+
+[node name="dirt234" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -414, -130 )
+texture = ExtResource( 14 )
+
+[node name="dirt235" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -417, -135 )
+texture = ExtResource( 14 )
+
+[node name="dirt245" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -419, -140 )
+texture = ExtResource( 14 )
+
+[node name="dirt236" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -422, -142 )
+texture = ExtResource( 14 )
+
+[node name="dirt237" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -407, -128 )
+texture = ExtResource( 14 )
+
+[node name="dirt238" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -409, -132 )
+texture = ExtResource( 14 )
+
+[node name="dirt239" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -409, -135 )
+texture = ExtResource( 14 )
+
+[node name="dirt240" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -410, -139 )
+texture = ExtResource( 14 )
+
+[node name="dirt241" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -411, -143 )
+texture = ExtResource( 14 )
+
+[node name="dirt242" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -410, -148 )
+texture = ExtResource( 14 )
+
+[node name="dirt243" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -409, -153 )
+texture = ExtResource( 14 )
+
+[node name="dirt244" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -408, -158 )
+texture = ExtResource( 14 )
+
 [node name="dirt175" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -276, -110 )
 texture = ExtResource( 14 )
