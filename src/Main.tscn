@@ -1077,6 +1077,8 @@ __meta__ = {
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 308, -130 )
+mass = 1.0
+should_rotate = false
 
 [node name="World" parent="YSort" instance=ExtResource( 9 )]
 
@@ -1110,6 +1112,8 @@ __meta__ = {
 
 [node name="Mother" parent="YSort/NPCs" instance=ExtResource( 7 )]
 position = Vector2( 255, -137 )
+mass = 1.0
+should_rotate = false
 move_speed = 15.0
 texture = ExtResource( 28 )
 ui_texture = ExtResource( 29 )
@@ -1117,6 +1121,8 @@ ui_color = Color( 0.913725, 0.517647, 0.447059, 1 )
 
 [node name="Homeless man" parent="YSort/NPCs" instance=ExtResource( 7 )]
 position = Vector2( 28, -29 )
+mass = 1.0
+should_rotate = false
 move_speed = 15.0
 texture = ExtResource( 24 )
 ui_texture = ExtResource( 30 )
@@ -1128,6 +1134,8 @@ texture = ExtResource( 24 )
 
 [node name="Mrs Smith" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 206, -22 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 5 )
 ui_texture = ExtResource( 31 )
 ui_color = Color( 0.831373, 0.666667, 0.529412, 1 )
@@ -1137,6 +1145,8 @@ texture = ExtResource( 5 )
 
 [node name="Pussy" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -84, -50 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 34 )
 ui_texture = ExtResource( 35 )
 ui_color = Color( 0.835294, 0.792157, 0.596078, 1 )
@@ -1153,6 +1163,8 @@ position = Vector2( 0, -4 )
 
 [node name="Sandash" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 38, 181 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 25 )
 ui_texture = ExtResource( 32 )
 ui_color = Color( 0.517647, 0.729412, 0.901961, 1 )
@@ -1168,6 +1180,8 @@ position = Vector2( 5, -15 )
 
 [node name="Grant" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 2, -153 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 26 )
 ui_texture = ExtResource( 33 )
 ui_color = Color( 0.690196, 0.603922, 0.752941, 1 )
@@ -1184,6 +1198,8 @@ position = Vector2( -1, -9 )
 
 [node name="Benjamin" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 169, 30 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 36 )
 ui_texture = ExtResource( 37 )
 ui_color = Color( 0.737255, 0.552941, 0.705882, 1 )
@@ -1200,6 +1216,8 @@ position = Vector2( 0, -4 )
 
 [node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -134, -103 )
+mass = 1.0
+should_rotate = false
 texture = ExtResource( 41 )
 
 [node name="Sprite" parent="YSort/NPCs/Death" index="0"]
