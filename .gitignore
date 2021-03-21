@@ -6,3 +6,4 @@ builds/
 .inkgd_compiler.cfg
 auto_itch.sh
 dropbox_sync.txt
+src/Modules/DataPersistence/LeaderboardAPI.gd
