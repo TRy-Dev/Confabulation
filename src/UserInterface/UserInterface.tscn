@@ -1,10 +1,35 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/Inventory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/UserInterface/DialogueUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/AchievementsUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Modules/Rendering/Shaders/vignette.shader" type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 6 )
+shader_param/overlay = true
+shader_param/scanlines_opacity = 0.0
+shader_param/scanlines_width = 0.0
+shader_param/grille_opacity = 0.0
+shader_param/resolution = Vector2( 800, 600 )
+shader_param/pixelate = false
+shader_param/roll = false
+shader_param/roll_speed = 8.0
+shader_param/roll_size = 15.0
+shader_param/roll_variation = 1.8
+shader_param/distort_intensity = 0.05
+shader_param/noise_opacity = 0.0
+shader_param/noise_speed = 0.0
+shader_param/static_noise_intensity = 0.0
+shader_param/aberration = 0.0
+shader_param/brightness = 1.0
+shader_param/discolor = false
+shader_param/warp_amount = 0.0
+shader_param/clip_warp = false
+shader_param/vignette_intensity = 1.4
+shader_param/vignette_opacity = 0.5
 
 [sub_resource type="Animation" id=1]
 resource_name = "_reset"
@@ -113,9 +138,9 @@ magenta - NPC (talk interaction)"
 [node name="AchievementsUI" parent="Screen" instance=ExtResource( 5 )]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
+margin_left = -300.0
 margin_top = -120.0
-margin_right = 344.0
+margin_right = 388.0
 margin_bottom = -6.00001
 
 [node name="DialogueUI" parent="Screen" instance=ExtResource( 4 )]
@@ -126,6 +151,20 @@ anchor_bottom = 1.0
 margin_left = -274.0
 margin_right = 344.0
 
+[node name="Vignette" type="ColorRect" parent="Screen"]
+material = SubResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 600.0
+margin_right = 6.10352e-05
+margin_bottom = 600.0
+rect_scale = Vector2( 1, -1 )
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 1 )
 anims/show = SubResource( 2 )
@@ -133,3 +172,5 @@ anims/show = SubResource( 2 )
 [node name="AchievementsAnimPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 3 )
 anims/show = SubResource( 4 )
+
+[node name="VignetteTween" type="Tween" parent="."]

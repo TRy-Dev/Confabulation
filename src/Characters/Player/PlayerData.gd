@@ -85,6 +85,7 @@ func add_item(name) -> void:
 			unlock_achievement("two_apples")
 		print("HEY! Player already has item: %s" %name)
 #		return
+	AudioController.sfx.play("pop")
 	inventory[name] = get_item_texture_by_name(name)
 	emit_signal("inventory_updated", inventory)
 

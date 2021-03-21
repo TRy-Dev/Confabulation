@@ -20,7 +20,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	yield(get_tree().create_timer(ACHI_DELAY), "timeout")
 	show_achievements()
-#	submit_and_show_leaderboard()
+	submit_and_show_leaderboard()
 
 func _physics_process(delta):
 	player.update_fsm()
@@ -56,8 +56,8 @@ func loop_achievements_text():
 		if not thank_you_shown:
 			thank_you_shown = true
 			AnimationController.play(anim_player, "thank_you", false)
-			yield(anim_player, "animation_finished")
 			can_exit = true
+			yield(anim_player, "animation_finished")
 		if len(achievements_unlocked) < 1:
 			return
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://src/Characters/Player/PlayerAvatar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
@@ -39,6 +39,8 @@
 [ext_resource path="res://assets/art/ola/npcs/dog_dialogue_trans.png" type="Texture" id=37]
 [ext_resource path="res://assets/art/ola/items/worm_pile.png" type="Texture" id=38]
 [ext_resource path="res://assets/art/ola/items/apple.png" type="Texture" id=39]
+[ext_resource path="res://src/World/Fog.tscn" type="PackedScene" id=40]
+[ext_resource path="res://assets/art/ola/npcs/death.png" type="Texture" id=41]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
@@ -96,6 +98,36 @@ texture = ExtResource( 18 )
 
 [node name="dirt61" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( 70, -121 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt132" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -41, -123 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt133" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -58, -131 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt129" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -77, -128 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt130" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -99, -117 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt115" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 90, -104 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 18 )
+
+[node name="dirt116" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( 90, -107 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 18 )
 
@@ -279,6 +311,54 @@ texture = ExtResource( 14 )
 position = Vector2( -101, -64 )
 texture = ExtResource( 14 )
 
+[node name="dirt117" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -124, -101 )
+texture = ExtResource( 14 )
+
+[node name="dirt128" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -131, -108 )
+texture = ExtResource( 14 )
+
+[node name="dirt118" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -128, -106 )
+texture = ExtResource( 14 )
+
+[node name="dirt119" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -128, -106 )
+texture = ExtResource( 14 )
+
+[node name="dirt120" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -135, -99 )
+texture = ExtResource( 14 )
+
+[node name="dirt121" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -144, -99 )
+texture = ExtResource( 14 )
+
+[node name="dirt122" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -153, -99 )
+texture = ExtResource( 14 )
+
+[node name="dirt123" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -162, -100 )
+texture = ExtResource( 14 )
+
+[node name="dirt124" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -156, -102 )
+texture = ExtResource( 14 )
+
+[node name="dirt125" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -145, -104 )
+texture = ExtResource( 14 )
+
+[node name="dirt126" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -135, -108 )
+texture = ExtResource( 14 )
+
+[node name="dirt127" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -135, -108 )
+texture = ExtResource( 14 )
+
 [node name="dirt39" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -103, -69 )
 texture = ExtResource( 14 )
@@ -455,6 +535,10 @@ texture = ExtResource( 22 )
 position = Vector2( 48, -162 )
 texture = ExtResource( 22 )
 
+[node name="dirt131" type="Sprite" parent="Snow+Dirt/Dirt"]
+position = Vector2( -50, -129 )
+texture = ExtResource( 22 )
+
 [node name="dirt85" type="Sprite" parent="Snow+Dirt/Dirt"]
 position = Vector2( -58, -192 )
 texture = ExtResource( 22 )
@@ -611,7 +695,7 @@ position = Vector2( 141.5, 68 )
 sort_enabled = true
 
 [node name="Worm" parent="YSort/Items" instance=ExtResource( 6 )]
-position = Vector2( 159.5, -175 )
+position = Vector2( 162.5, -174 )
 sort_enabled = true
 
 [node name="Sprite" parent="YSort/Items/Worm" index="2"]
@@ -721,6 +805,11 @@ position = Vector2( 0, -4 )
 
 [node name="Death" parent="YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( -134, -103 )
+texture = ExtResource( 41 )
+
+[node name="Sprite" parent="YSort/NPCs/Death" index="0"]
+position = Vector2( -4, -21 )
+texture = ExtResource( 41 )
 
 [node name="SignBus" type="YSort" parent="YSort"]
 position = Vector2( -12, -183 )
@@ -775,6 +864,9 @@ position = Vector2( -243, -120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndSceneTrigger"]
 shape = SubResource( 2 )
+
+[node name="Fog" parent="." instance=ExtResource( 40 )]
+position = Vector2( -32, 0 )
 [connection signal="body_entered" from="EndSceneTrigger" to="." method="_on_EndSceneTrigger_body_entered"]
 
 [editable path="YSort/Items/Worm"]
@@ -792,3 +884,5 @@ shape = SubResource( 2 )
 [editable path="YSort/NPCs/Grant"]
 
 [editable path="YSort/NPCs/Benjamin"]
+
+[editable path="YSort/NPCs/Death"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal updated_destroyed_npc_count(count)
+
 onready var camera_controller = $CameraController
 onready var player = $YSort/Player
 onready var npc_container = $YSort/NPCs
@@ -14,6 +16,8 @@ var npcs_destroyed_count = 0
 const BASE_MUSIC_VOLUME = -20
 
 func _ready() -> void:
+	connect("updated_destroyed_npc_count", $Fog, "_on_npc_destroyed")
+	connect("updated_destroyed_npc_count", $UserInterface, "_on_npc_destroyed")
 	Courtain.play("show", true)
 	AudioController.lerp_music_volume(-60, 0.0)
 	AudioController.music.play("carpe_diem")
@@ -62,6 +66,7 @@ func _on_npc_destroyed(npc):
 		_change_music("fresh_air")
 	elif npcs_destroyed_count == 3:
 		_change_music("almost_new")
+	emit_signal("updated_destroyed_npc_count", npcs_destroyed_count)
 	yield(get_tree().create_timer(0.3), "timeout")
 	DialogueController.set_story_variable("npc_count", len(npc_container.get_children()))
 
