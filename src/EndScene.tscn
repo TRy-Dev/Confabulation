@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/UserInterface/AchievementsUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt8.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/art/ola/world/dirt/dirt2.png" type="Texture" id=19]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=20]
 [ext_resource path="res://assets/fonts/kenney_mini_24.tres" type="DynamicFont" id=21]
+[ext_resource path="res://src/World/Props/Bush10.tscn" type="PackedScene" id=22]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -114,6 +115,10 @@ texture = ExtResource( 16 )
 position = Vector2( 28, -38 )
 texture = ExtResource( 19 )
 
+[node name="dirt38" type="Sprite" parent="Ground"]
+position = Vector2( 80, -52 )
+texture = ExtResource( 19 )
+
 [node name="dirt14" type="Sprite" parent="Ground"]
 position = Vector2( 67, -77 )
 texture = ExtResource( 19 )
@@ -146,8 +151,24 @@ texture = ExtResource( 17 )
 position = Vector2( -27, -38 )
 texture = ExtResource( 20 )
 
+[node name="dirt37" type="Sprite" parent="Ground"]
+position = Vector2( -65, -93 )
+texture = ExtResource( 20 )
+
 [node name="dirt15" type="Sprite" parent="Ground"]
 position = Vector2( -15, -62 )
+texture = ExtResource( 20 )
+
+[node name="dirt32" type="Sprite" parent="Ground"]
+position = Vector2( -27, -61 )
+texture = ExtResource( 20 )
+
+[node name="dirt33" type="Sprite" parent="Ground"]
+position = Vector2( -27, -60 )
+texture = ExtResource( 20 )
+
+[node name="dirt34" type="Sprite" parent="Ground"]
+position = Vector2( -32, -61 )
 texture = ExtResource( 20 )
 
 [node name="dirt16" type="Sprite" parent="Ground"]
@@ -164,7 +185,83 @@ position = Vector2( 34, -63 )
 texture = ExtResource( 2 )
 
 [node name="dirt11" type="Sprite" parent="Ground"]
-position = Vector2( 2, -46 )
+position = Vector2( 2, -45 )
+texture = ExtResource( 2 )
+
+[node name="dirt17" type="Sprite" parent="Ground"]
+position = Vector2( -54, 53 )
+texture = ExtResource( 2 )
+
+[node name="dirt18" type="Sprite" parent="Ground"]
+position = Vector2( -57, 54 )
+texture = ExtResource( 2 )
+
+[node name="dirt19" type="Sprite" parent="Ground"]
+position = Vector2( -60, 52 )
+texture = ExtResource( 2 )
+
+[node name="dirt20" type="Sprite" parent="Ground"]
+position = Vector2( -1, 54 )
+texture = ExtResource( 2 )
+
+[node name="dirt21" type="Sprite" parent="Ground"]
+position = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+
+[node name="dirt22" type="Sprite" parent="Ground"]
+position = Vector2( 71, 44 )
+texture = ExtResource( 2 )
+
+[node name="dirt23" type="Sprite" parent="Ground"]
+position = Vector2( 65, 45 )
+texture = ExtResource( 2 )
+
+[node name="dirt24" type="Sprite" parent="Ground"]
+position = Vector2( 52, 44 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt25" type="Sprite" parent="Ground"]
+position = Vector2( 58, 45 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt26" type="Sprite" parent="Ground"]
+position = Vector2( -90, 14 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt27" type="Sprite" parent="Ground"]
+position = Vector2( -82, 13 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt28" type="Sprite" parent="Ground"]
+position = Vector2( -76, 13 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt29" type="Sprite" parent="Ground"]
+position = Vector2( -117, -44 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt30" type="Sprite" parent="Ground"]
+position = Vector2( -108, -44 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt35" type="Sprite" parent="Ground"]
+position = Vector2( 99, -55 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="dirt36" type="Sprite" parent="Ground"]
+position = Vector2( 108, -54 )
+texture = ExtResource( 2 )
+
+[node name="dirt31" type="Sprite" parent="Ground"]
+position = Vector2( -98, -43 )
 texture = ExtResource( 2 )
 
 [node name="dirt12" type="Sprite" parent="Ground"]
@@ -190,8 +287,14 @@ position = Vector2( 59, 44 )
 [node name="Tree10" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( -80, 14 )
 
+[node name="Tree11" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -109, -43 )
+
 [node name="Tree3" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( -1, -44 )
+
+[node name="Tree12" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 106, -53 )
 
 [node name="Tree4" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 52, -38 )
@@ -214,9 +317,15 @@ position = Vector2( 0, 51 )
 [node name="Bush8" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 68, -76 )
 
+[node name="Bush10" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( 80, -51 )
+
+[node name="Bush11" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( -66, -93 )
+
 [node name="CameraController" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -36.1219 )
-zoom = Vector2( 0.18, 0.18 )
+zoom = Vector2( 0.24, 0.24 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -12,11 +12,15 @@ var thank_you_shown = false
 var can_exit = false
 
 func _ready():
-	AnimationController.reset(anim_player)
-	Courtain.play("show", true)
+	Courtain.play("set_visible")
 	AudioController.lerp_music_volume(-60, 0.0)
 	AudioController.music.play("at_rest")
 	AudioController.lerp_music_volume(-20, 8.0)
+	AnimationController.reset(anim_player)
+	yield(get_tree().create_timer(1.0), "timeout")
+	Courtain.play("show", true)
+	$CameraController.set_zoom_level("far", false)
+	$CameraController.set_zoom_level("medium")
 	yield(get_tree(), "idle_frame")
 	yield(get_tree().create_timer(ACHI_DELAY), "timeout")
 	show_achievements()

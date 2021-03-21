@@ -46,7 +46,8 @@ func _ready():
 	Courtain.play("set_visible")
 	yield(get_tree().create_timer(2.0), "timeout")
 	Courtain.play("show", true)
-	$CameraController.set_zoom_level("medium", false)
+	$CameraController.set_zoom_level("far", false)
+	$CameraController.set_zoom_level("medium")
 	call_deferred("_init_state", STATES.INIT)
 
 func _physics_process(delta):

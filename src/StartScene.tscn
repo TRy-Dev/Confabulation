@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/fonts/kenney_mini_8.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/art/debug/rect_16.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://src/World/Props/Bush10.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt4.png" type="Texture" id=25]
 [ext_resource path="res://assets/art/ola/world/dirt/dirt6.png" type="Texture" id=26]
+[ext_resource path="res://src/World/Props/Tree5.tscn" type="PackedScene" id=27]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -654,15 +655,56 @@ __meta__ = {
 }
 
 [node name="dirt1" type="Sprite" parent="Ground"]
-position = Vector2( -37, 14 )
+position = Vector2( -50, 17 )
+texture = ExtResource( 13 )
+
+[node name="dirt46" type="Sprite" parent="Ground"]
+position = Vector2( 66, -24 )
+texture = ExtResource( 13 )
+
+[node name="dirt47" type="Sprite" parent="Ground"]
+position = Vector2( 55, -26 )
+texture = ExtResource( 13 )
+
+[node name="dirt48" type="Sprite" parent="Ground"]
+position = Vector2( 55, -26 )
+texture = ExtResource( 13 )
+
+[node name="dirt49" type="Sprite" parent="Ground"]
+position = Vector2( 57, -31 )
+texture = ExtResource( 13 )
+
+[node name="dirt50" type="Sprite" parent="Ground"]
+position = Vector2( 57, -31 )
+texture = ExtResource( 13 )
+
+[node name="dirt51" type="Sprite" parent="Ground"]
+position = Vector2( 67, -31 )
+texture = ExtResource( 13 )
+
+[node name="dirt52" type="Sprite" parent="Ground"]
+position = Vector2( 53, -22 )
+texture = ExtResource( 13 )
+
+[node name="dirt53" type="Sprite" parent="Ground"]
+position = Vector2( 54, 7 )
+texture = ExtResource( 13 )
+
+[node name="dirt54" type="Sprite" parent="Ground"]
+position = Vector2( 53, 2 )
+texture = ExtResource( 13 )
+
+[node name="dirt55" type="Sprite" parent="Ground"]
+position = Vector2( 58, -13 )
+rotation = -1.5708
 texture = ExtResource( 13 )
 
 [node name="dirt7" type="Sprite" parent="Ground"]
-position = Vector2( -64, 9 )
+position = Vector2( -69, 12 )
 texture = ExtResource( 10 )
 
 [node name="dirt8" type="Sprite" parent="Ground"]
-position = Vector2( -49, 7 )
+position = Vector2( -54, 10 )
 texture = ExtResource( 10 )
 
 [node name="dirt16" type="Sprite" parent="Ground"]
@@ -677,44 +719,150 @@ texture = ExtResource( 10 )
 position = Vector2( 13, -94 )
 texture = ExtResource( 10 )
 
+[node name="dirt25" type="Sprite" parent="Ground"]
+position = Vector2( 56, 12 )
+texture = ExtResource( 10 )
+
+[node name="dirt45" type="Sprite" parent="Ground"]
+position = Vector2( 84, -8 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 10 )
+
 [node name="dirt2" type="Sprite" parent="Ground"]
-position = Vector2( -20, 9 )
+position = Vector2( -38, -3 )
+texture = ExtResource( 11 )
+
+[node name="dirt26" type="Sprite" parent="Ground"]
+position = Vector2( 50, 4 )
+texture = ExtResource( 11 )
+
+[node name="dirt27" type="Sprite" parent="Ground"]
+position = Vector2( 49, 0 )
+texture = ExtResource( 11 )
+
+[node name="dirt28" type="Sprite" parent="Ground"]
+position = Vector2( 50, -3 )
+texture = ExtResource( 11 )
+
+[node name="dirt39" type="Sprite" parent="Ground"]
+position = Vector2( 57, 8 )
+texture = ExtResource( 11 )
+
+[node name="dirt29" type="Sprite" parent="Ground"]
+position = Vector2( 50, -6 )
+texture = ExtResource( 11 )
+
+[node name="dirt30" type="Sprite" parent="Ground"]
+position = Vector2( 50, -10 )
+texture = ExtResource( 11 )
+
+[node name="dirt23" type="Sprite" parent="Ground"]
+position = Vector2( -59, -88 )
+texture = ExtResource( 22 )
+
+[node name="dirt31" type="Sprite" parent="Ground"]
+position = Vector2( 49, -14 )
+texture = ExtResource( 11 )
+
+[node name="dirt32" type="Sprite" parent="Ground"]
+position = Vector2( 50, -17 )
+texture = ExtResource( 11 )
+
+[node name="dirt33" type="Sprite" parent="Ground"]
+position = Vector2( 48, -19 )
+texture = ExtResource( 11 )
+
+[node name="dirt44" type="Sprite" parent="Ground"]
+position = Vector2( 56, -6 )
+texture = ExtResource( 11 )
+
+[node name="dirt42" type="Sprite" parent="Ground"]
+position = Vector2( 50, -21 )
+texture = ExtResource( 11 )
+
+[node name="dirt43" type="Sprite" parent="Ground"]
+position = Vector2( 50, -21 )
+texture = ExtResource( 11 )
+
+[node name="dirt34" type="Sprite" parent="Ground"]
+position = Vector2( 58, 5 )
+texture = ExtResource( 11 )
+
+[node name="dirt35" type="Sprite" parent="Ground"]
+position = Vector2( 57, 3 )
+texture = ExtResource( 11 )
+
+[node name="dirt36" type="Sprite" parent="Ground"]
+position = Vector2( 57, 1 )
+texture = ExtResource( 11 )
+
+[node name="dirt37" type="Sprite" parent="Ground"]
+position = Vector2( 56, -1 )
+texture = ExtResource( 11 )
+
+[node name="dirt38" type="Sprite" parent="Ground"]
+position = Vector2( 56, -3 )
 texture = ExtResource( 11 )
 
 [node name="dirt3" type="Sprite" parent="Ground"]
-position = Vector2( 6, 15 )
+position = Vector2( -11, 16 )
 texture = ExtResource( 21 )
 
 [node name="dirt4" type="Sprite" parent="Ground"]
-position = Vector2( 34, -9 )
+position = Vector2( 35, -10 )
+texture = ExtResource( 11 )
+
+[node name="dirt40" type="Sprite" parent="Ground"]
+position = Vector2( 36, 19 )
+texture = ExtResource( 11 )
+
+[node name="dirt41" type="Sprite" parent="Ground"]
+position = Vector2( -73, -53 )
 texture = ExtResource( 11 )
 
 [node name="dirt9" type="Sprite" parent="Ground"]
-position = Vector2( -69, -84 )
+position = Vector2( -71, -88 )
 texture = ExtResource( 10 )
 
 [node name="dirt11" type="Sprite" parent="Ground"]
-position = Vector2( -53, -95 )
+position = Vector2( -55, -99 )
 texture = ExtResource( 10 )
 
 [node name="dirt10" type="Sprite" parent="Ground"]
-position = Vector2( -57, -84 )
+position = Vector2( -59, -88 )
 texture = ExtResource( 22 )
+
+[node name="dirt20" type="Sprite" parent="Ground"]
+position = Vector2( 24, -89 )
+texture = ExtResource( 25 )
 
 [node name="dirt12" type="Sprite" parent="Ground"]
-position = Vector2( -57, -84 )
-texture = ExtResource( 22 )
-
-[node name="dirt23" type="Sprite" parent="Ground"]
-position = Vector2( -57, -84 )
+position = Vector2( -59, -88 )
 texture = ExtResource( 22 )
 
 [node name="dirt24" type="Sprite" parent="Ground"]
-position = Vector2( -56, -90 )
+position = Vector2( -59, -94 )
+texture = ExtResource( 22 )
+
+[node name="dirt62" type="Sprite" parent="Ground"]
+position = Vector2( -59, -106 )
 texture = ExtResource( 22 )
 
 [node name="dirt5" type="Sprite" parent="Ground"]
-position = Vector2( -44, -90 )
+position = Vector2( -46, -94 )
+texture = ExtResource( 13 )
+
+[node name="dirt61" type="Sprite" parent="Ground"]
+position = Vector2( -93, -60 )
+texture = ExtResource( 13 )
+
+[node name="dirt60" type="Sprite" parent="Ground"]
+position = Vector2( -49, -102 )
+texture = ExtResource( 13 )
+
+[node name="dirt63" type="Sprite" parent="Ground"]
+position = Vector2( -70, -103 )
+scale = Vector2( -1, 1 )
 texture = ExtResource( 13 )
 
 [node name="dirt6" type="Sprite" parent="Ground"]
@@ -723,10 +871,6 @@ texture = ExtResource( 25 )
 
 [node name="dirt21" type="Sprite" parent="Ground"]
 position = Vector2( 30, -92 )
-texture = ExtResource( 25 )
-
-[node name="dirt20" type="Sprite" parent="Ground"]
-position = Vector2( 24, -89 )
 texture = ExtResource( 25 )
 
 [node name="dirt14" type="Sprite" parent="Ground"]
@@ -742,12 +886,28 @@ position = Vector2( 61, -47 )
 texture = ExtResource( 21 )
 
 [node name="dirt19" type="Sprite" parent="Ground"]
-position = Vector2( -28, -82 )
+position = Vector2( -32, -85 )
 texture = ExtResource( 21 )
 
 [node name="dirt22" type="Sprite" parent="Ground"]
 position = Vector2( 48, -82 )
 texture = ExtResource( 26 )
+
+[node name="dirt56" type="Sprite" parent="Ground"]
+position = Vector2( 85, 31 )
+texture = ExtResource( 21 )
+
+[node name="dirt57" type="Sprite" parent="Ground"]
+position = Vector2( 88, -46 )
+texture = ExtResource( 21 )
+
+[node name="dirt58" type="Sprite" parent="Ground"]
+position = Vector2( -3, 43 )
+texture = ExtResource( 21 )
+
+[node name="dirt59" type="Sprite" parent="Ground"]
+position = Vector2( -95, 39 )
+texture = ExtResource( 21 )
 
 [node name="YSort" type="YSort" parent="."]
 __meta__ = {
@@ -758,38 +918,60 @@ __meta__ = {
 position = Vector2( 0, -3 )
 
 [node name="Tree3" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( -56, 7 )
+position = Vector2( -61, 10 )
+
+[node name="Tree5" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( -45, 83 )
+
+[node name="Tree6" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 65, 70 )
+scale = Vector2( -1, 1 )
 
 [node name="Stump4" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 60, -30 )
 
 [node name="TrunkH" parent="YSort" instance=ExtResource( 14 )]
-position = Vector2( 117, 30 )
+position = Vector2( 5, -85 )
 
 [node name="TrunkS" parent="YSort" instance=ExtResource( 17 )]
-position = Vector2( -56, -77 )
+position = Vector2( -58, -84 )
 
 [node name="TrunkV" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 53, 11 )
 
 [node name="Bush8" parent="YSort" instance=ExtResource( 19 )]
-position = Vector2( 7, 15 )
+position = Vector2( -10, 15 )
 
 [node name="Bush11" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 37, 20 )
 
 [node name="Bush13" parent="YSort" instance=ExtResource( 20 )]
-position = Vector2( 34, -8 )
+position = Vector2( 35, -8 )
 
 [node name="Tree4" parent="YSort" instance=ExtResource( 23 )]
 position = Vector2( 64, -66 )
 
 [node name="Bush10" parent="YSort" instance=ExtResource( 24 )]
-position = Vector2( -67, -54 )
+position = Vector2( -71, -52 )
+
+[node name="Bush9" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 86, 31 )
+
+[node name="Bush12" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 89, -46 )
+
+[node name="Bush14" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( -2, 43 )
+
+[node name="Bush15" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( -94, 39 )
+
+[node name="Tree7" parent="YSort" instance=ExtResource( 27 )]
+position = Vector2( -98, -61 )
 
 [node name="CameraController" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -36.1219 )
-zoom = Vector2( 0.18, 0.18 )
+zoom = Vector2( 0.24, 0.24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/_reset = SubResource( 11 )
