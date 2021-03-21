@@ -85,9 +85,10 @@ func add_item(name) -> void:
 			unlock_achievement("two_apples")
 		print("HEY! Player already has item: %s" %name)
 #		return
-	AudioController.sfx.play("pop")
 	inventory[name] = get_item_texture_by_name(name)
 	emit_signal("inventory_updated", inventory)
+	yield(get_tree().create_timer(0.2), "timeout")
+	AudioController.sfx.play("pop")
 
 func remove_item(name) -> void:
 	if not has_item(name):

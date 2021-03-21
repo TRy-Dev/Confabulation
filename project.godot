@@ -153,7 +153,6 @@ config/icon="res://icon.png"
 [audio]
 
 default_bus_layout="res://src/Modules/Audio/bus.tres"
-output_latency.web=25
 
 [autoload]
 
